@@ -1,0 +1,22 @@
+{
+  "songs": [
+    {
+      "id": "song1",
+      "title": "El Amanecer DiSarli",
+      "orchestra": "Carlos Di Sarli",
+      "audioUrl": "https://namethattangotune.blob.core.windows.net/songs/El%20Amanecer%20DiSarli.wav"
+    },
+    {
+      "id": "song2",
+      "title": "MalaJunta_pugliese",
+      "orchestra": "Osvaldo Pugliese",
+      "audioUrl": "https://namethattangotune.blob.core.windows.net/songs/MalaJunta_pugliese.wav"
+    },
+    {
+      "id": "song3",
+      "title": "Tierrita_DArienzo",
+      "orchestra": "Juan D'Arienzo",
+      "audioUrl": "https://namethattangotune.blob.core.windows.net/songs/Tierrita_DArienzo.wav"
+    }
+  ]
+}
