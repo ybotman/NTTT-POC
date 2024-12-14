@@ -22,6 +22,8 @@ function Quiz() {
   const [sessionScore, setSessionScore] = useState(0); // accumulate over multiple songs
   const [metadataLoaded, setMetadataLoaded] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState(""); // New state for feedback
+  const [finalMessage, setFinalMessage] = useState(""); // Final performance message
 
   const audioRef = useRef(null);
   const scoreIntervalRef = useRef(null);
@@ -33,9 +35,7 @@ function Quiz() {
       fetch("/songData/djSongs.json").then((r) => r.json()),
       fetch("/songData/ArtistMaster.json").then((r) => r.json()),
     ]).then(([djSongsData, artistData]) => {
-      // djSongsData.songs is the array of songs
       setSongs(djSongsData.songs);
-      // artistData is an array of artist objects with field "artist"
       setArtists(artistData);
     });
   }, []);
@@ -101,6 +101,8 @@ function Quiz() {
     setQuizOver(false);
     setSelectedAnswer(null);
     setMetadataLoaded(false);
+    setFeedbackMessage("");
+    setFinalMessage("");
 
     // Set random start time between 0 and 90s
     const startT = Math.floor(Math.random() * 90);
@@ -150,6 +152,19 @@ function Quiz() {
     stopAudio();
     setSessionScore((prev) => prev + score);
     console.log("Quiz finalized. Score:", score);
+
+    // Determine final message based on score
+    let msg = "";
+    if (score > 80) {
+      msg = "Excellent job!";
+    } else if (score > 50) {
+      msg = "Great work!";
+    } else if (score > 20) {
+      msg = "Not bad!";
+    } else {
+      msg = "Better luck next time.";
+    }
+    setFinalMessage(msg);
   };
 
   const handleAnswerSelect = (answer) => {
@@ -160,11 +175,13 @@ function Quiz() {
     if (userAnswer === correct) {
       // Correct answer, finalize quiz
       setSelectedAnswer(answer);
+      setFeedbackMessage("Correct!");
       finalizeQuiz();
     } else {
       // Wrong answer: subtract 10 points and continue
       setScore((prev) => prev - 10);
       setSelectedAnswer(answer);
+      setFeedbackMessage("Wrong answer! -10 points");
       console.log("Wrong answer chosen:", answer, "Score now:", score - 10);
     }
   };
@@ -217,10 +234,15 @@ function Quiz() {
             Who is the Artist?
           </Typography>
 
-          {/* Display correct answer for testing            (For Testing) Correct Answer: {correctAnswer} */}
-          <Typography variant="body2" sx={{ mb: 2, fontStyle: "italic" }}>
-
-          </Typography>
+          {/* Feedback message for wrong/correct answer */}
+          {feedbackMessage && (
+            <Typography
+              variant="subtitle1"
+              sx={{ mb: 2, color: feedbackMessage.startsWith("Wrong") ? "error.main" : "success.main" }}
+            >
+              {feedbackMessage}
+            </Typography>
+          )}
 
           <Stack spacing={2}>
             {answers.map((ans) => (
@@ -253,6 +275,10 @@ function Quiz() {
               <Typography variant="h5" gutterBottom>
                 Final Score for this Song: {score}
               </Typography>
+              {/* Show final performance message */}
+              <Typography variant="h6" gutterBottom>
+                {finalMessage}
+              </Typography>
               <Button variant="contained" color="secondary" onClick={handleNextSong}>
                 Next Song
               </Button>
@@ -277,15 +303,10 @@ function shuffleArray(array) {
 }
 
 function getDistractors(correctArtist, allArtists) {
-  // correctArtist: string, the correct artist name
-  // allArtists: array of { artist: "Artist Name", active: "true", ... }
-
-  // Filter out the correct artist
   const candidates = allArtists
     .filter((a) => a.artist.toLowerCase() !== correctArtist.toLowerCase())
     .map((a) => a.artist);
 
-  // Shuffle and take 3
   const shuffled = shuffleArray(candidates);
   return shuffled.slice(0, 3);
 }
