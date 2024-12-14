@@ -1,0 +1,802 @@
+[
+  {
+    "songId": "8be631c61603447d9c39fdaf314364414cd855fe36364bc0ad",
+    "name": "Rosas Blancas",
+    "album": "Tango Classics 343_ Sin Carino (Historical Recordings)",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/Tango Classics 343_ Sin Cariño (Historical Recordings)/06 Rosas Blancas.m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "d0b506c360534ff782f58f1d2009a138ff5a28c553d944bdb2",
+    "name": "El Resero",
+    "album": "Bailando Tango Con Juan D' Arienzo y Su Orquesta",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bailando Tango Con Juan D' Arienzo y Su Orquesta/20 El Resero.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "a1f68672d7414258b39d4508084b7fb565a6231ca6224cf987",
+    "name": "Loca De Amor-Vals (Remasterizada)",
+    "album": "Valses y Milongas (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses y Milongas (Remasterizado)/09 Loca De Amor-Vals (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "929e1c2f8577431982ecb6d483b5c238d4684fd5df914feba2",
+    "name": "Por Eso Canto Yo",
+    "album": "Malvon (Historical Recordings) [with Enrique Campos]",
+    "artist": "Ricardo Tanturi",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Ricardo Tanturi/Malvon (Historical Recordings) [with Enrique Campos]/03 Por Eso Canto Yo.m4p",
+    "MasterArtist": "Ricardo Tanturi"
+  },
+  {
+    "songId": "150e76aab23b4fa9b8b9c0e814a3d4cfb295f65ecbfa40ebb6",
+    "name": "La Cumparsita",
+    "album": "Tangos Inolvidables",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tangos Inolvidables/01 La Cumparsita.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "481d5a67b4e04c4497c91a8712fdaece58b1f0a8883c419f86",
+    "name": "Rosas De Otono",
+    "album": "Carlos di Sarli, El Senor del Tango, Vol. 2 (1940-1945)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Carlos di Sarli, El Señor del Tango, Vol. 2 (1940-1945)/03 Rosas De Otoño.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "4047cc0b0ae546238d6fb3e4d38ba5590d9b447cc8984f2894",
+    "name": "Dicen Que Dicen (feat. Roberto Mancini)",
+    "album": "Alfredo de Angelis, Vol. 2",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Alfredo de Angelis, Vol. 2/08 Dicen Que Dicen (feat. Roberto Mancini).m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "d89b00a7d7d04c14a0beb4528aad8026a3c30a8a3fb44f27b2",
+    "name": "Con Tus Besos",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/04 Con Tus Besos.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "76f7155829c34cbbabbb4db66f8842ba85e4823af04c446980",
+    "name": "Picante-Milonga (Remasterizada)",
+    "album": "Valses y Milongas (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses y Milongas (Remasterizado)/14 Picante-Milonga (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "689f9400fba54fd097ab8508733973ee1fd543b401fd4c10b1",
+    "name": "Cristal y Luna-Tango (Remasterizada)",
+    "album": "20 Tangos y Milongas (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/20 Tangos y Milongas (Remasterizado)/06 Cristal y Luna-Tango (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "7b2032b70d0e46b2b8c7157486df18679ec35ef9bf214a13a7",
+    "name": "Sentimiento Gaucho (feat. Orquesta de Rodolfo Biagi)",
+    "album": "25 Tangos",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/25 Tangos/12 Sentimiento Gaucho (feat. Orquesta de Rodolfo Biagi).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "dfcee7aac6b34c8b9ce7cc886dbfe681b6e5c7566f78475ea6",
+    "name": "El Mayoral Del Tranvia (feat. Julio Martel)",
+    "album": "Acordes Portenos",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Acordes Porteños/13 El Mayoral Del Tranvia (feat. Julio Martel).m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "9d59fac20b704dabb081414e37c9bb78aa26c97b55214774a6",
+    "name": "Mentiras (feat. Miguel Montero & Jorge Maciel)",
+    "album": "Osvaldo Pugliese (feat. Miguel Montero & Jorge Maciel)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Osvaldo Pugliese (feat. Miguel Montero & Jorge Maciel)/12 Mentiras (feat. Miguel Montero & Jorge Maciel).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "e2089919757f4b7c935b82d18f5f2135e227b35f498c476388",
+    "name": "Sueno Florido (remasterizada)",
+    "album": "Valses (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses (Remasterizado)/46 Sueño Florido (remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "04a622647b1d48219aabbe2cdde79808db08197195224155bb",
+    "name": "El 13",
+    "album": "Tango Collection",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tango Collection/03 El 13.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "6afc97e76104436c833c567ef96d6065d58e703bf5ae489891",
+    "name": "Marcas",
+    "album": "Imprescindibles",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Imprescindibles/15 Marcas.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "d9f0ff6b70af4502a5a385da9bfa7bef98bd0cec18b74120ba",
+    "name": "Quiero Verte una Vez Mas (feat. Jorge Ortiz & Orquesta de Rodolfo Biagi)",
+    "album": "Sueno de Juventud",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Sueño de Juventud/09 Quiero Verte una Vez Mas (feat. Jorge Ortiz & Orquesta de Rodolfo Biagi).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "ed574d1cfddf46909886500ae940c8621a8083c434344f75b9",
+    "name": "Los Mareados",
+    "album": "RCA Victor 100 Anos_ Anibal Troilo",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/RCA Victor 100 Años_ Anibal Troilo/02 Los Mareados.m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "f361061d830a46e98e9d5857727156c5960d29ca99024fe1b6",
+    "name": "Cien Guitarras (feat. Carlos Dante & Julio Martel)",
+    "album": "De Igual a Igual",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/De Igual a Igual/20 Cien Guitarras (feat. Carlos Dante & Julio Martel).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "17392c0ac6dd4c42953306c47ee504bd9a4fe0cf5d4b41b1b9",
+    "name": "Venus",
+    "album": "(1944), Vol. 12",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/(1944), Vol. 12/16 Venus.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "1f77519b21b94e99bd9b45daeed13bc65fd68d934c9b4979aa",
+    "name": "Cascabelito (feat. Jorge Maciel & Orquesta de Osvaldo Pugliese)",
+    "album": "Los 25 Mejores Tangos De (feat. Orquesta de Osvaldo Pugliese)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los 25 Mejores Tangos De (feat. Orquesta de Osvaldo Pugliese)/08 Cascabelito (feat. Jorge Maciel & Orquesta de Osvaldo Pugliese).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "b377e632ddc44b30b424f4a274dd01f7fc2e2c9420ae44de9f",
+    "name": "Adios Te Vas (feat. Roberto Rufino)",
+    "album": "1940-1943",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/1940-1943/20 Adiós Te Vas (feat. Roberto Rufino).m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "01c838684ea843c481bfe1409e5932a6041e9e35fd2c4731bf",
+    "name": "Rondando Tu Esquina",
+    "album": "Tangos Inolvidables",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tangos Inolvidables/04 Rondando Tu Esquina.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "8fd312d63fbf432b9e46da977480d57c39543191a57d484198",
+    "name": "Fumando Espero",
+    "album": "Alfredo de Angelis vs. Osvaldo Fresedo, Tango",
+    "artist": "Alfredo de Angelis & Osvaldo Fresedo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis & Osvaldo Fresedo/Alfredo de Angelis vs. Osvaldo Fresedo, Tango/11 Fumando Espero.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "bfde0024b3784b0d9ca9589d76f0df003c866383c0f94bbdaa",
+    "name": "El Entrerriano (Remasterizada)",
+    "album": "100 Tangos Inmortales (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/100 Tangos Inmortales (Remasterizado)/35 El Entrerriano (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "85965dc175144176932964ff535f523bd22c3800179245a3a8",
+    "name": "El Embrollo",
+    "album": "Sera una Noche",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Será una Noche/08 El Embrollo.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "3964aee01aec43228b21fa1ecd29d56f251a3e5afe3d45a994",
+    "name": "Quejas de Bandoneon",
+    "album": "Tango Classics 203_ Tu Palida Voz",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/Tango Classics 203_ Tu Palida Voz/09 Quejas de Bandoneón.m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "4894c04d19b5441c894c583c3d4ee71128a60aae4c0e4decbb",
+    "name": "Hojarasca",
+    "album": "Memorial del Tango 2",
+    "artist": "Roberto Firpo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Roberto Firpo/Memorial del Tango 2/18 Hojarasca.m4p",
+    "MasterArtist": "Roberto Firpo"
+  },
+  {
+    "songId": "a6668b0be384412fbdde5ff668d9836647f42c3e645a41dca7",
+    "name": "Llevame en Tus Alas",
+    "album": "40 Grandes Exitos",
+    "artist": "Francisco Lomuto",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Francisco Lomuto/40 Grandes Éxitos/08 Llévame en Tus Alas.m4p",
+    "MasterArtist": "Francisco Lomuto"
+  },
+  {
+    "songId": "ea6b0e9db89a484b84402dc2988774657f102abed0f448dc88",
+    "name": "Ya Lo Ves",
+    "album": "Imprescindibles",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Imprescindibles/20 Ya Lo Ves.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "172e8ac26cb1416ea6596190b05669a32ac330ecd5094ab9a8",
+    "name": "Veneracion",
+    "album": "Tango Classics 349_ Pobre Sonador (Historical Recordings)",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/Tango Classics 349_ Pobre Soñador (Historical Recordings)/03 Veneracion.m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "3abf688f243e4866ac8dbbec35d474eca21b36067ffc42d686",
+    "name": "Junto a tu corazon",
+    "album": "Carlos di Sarli, El Senor del Tango, Vol. 2 (1940-1945)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Carlos di Sarli, El Señor del Tango, Vol. 2 (1940-1945)/08 Junto a tu corazón.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "19ab06a39c5b438fba363ca872e6b84b24be18e840064bf692",
+    "name": "Lagrimas de Sangre (feat. Oscar Larroca)",
+    "album": "De Igual a Igual",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/De Igual a Igual/10 Lágrimas de Sangre (feat. Oscar Larroca).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "7385a9ee44a3431abebfbe75138549e053dab6881c0d4db0a6",
+    "name": "Veneracion",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/36 Veneración.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "4f85671ca29844669403f3a65cf9ab9c20e2693768db4db99c",
+    "name": "Tal vez sera su voz",
+    "album": "Tango y copas (1942-1943)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tango y copas (1942-1943)/19 Tal vez será su voz.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "84169d94b9234b3fb9e27bb156804babb1c4bfe3bcd94c9191",
+    "name": "Que Nadie Se Entere",
+    "album": "Como Nos Cambia La Vida",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Como Nos Cambia La Vida/11 Que Nadie Se Entere.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "06c8d0306df448649f465ee295767a37580ecc5681f3492e99",
+    "name": "Entre pitada y pitada",
+    "album": "Carlos di Sarli, El Senor del Tango, Vol. 2 (1940-1945)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Carlos di Sarli, El Señor del Tango, Vol. 2 (1940-1945)/23 Entre pitada y pitada.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "10a51c5c910545b08832c9ff4ba84cb0170fb7d3ef974705a0",
+    "name": "Diablito",
+    "album": "Memorial del Tango 2",
+    "artist": "Roberto Firpo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Roberto Firpo/Memorial del Tango 2/01 Diablito.m4p",
+    "MasterArtist": "Roberto Firpo"
+  },
+  {
+    "songId": "d3691775e6da45a890134ab7faab49da96e5beef9a6e4652b9",
+    "name": "Vision Celeste (remasterizada)",
+    "album": "Valses (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses (Remasterizado)/55 Visión Celeste (remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "3abfaefdf81541d3ad1ffd81ec45b863766a2fd1fd8c4ffaad",
+    "name": "Soy del noventa",
+    "album": "Tango y copas (1942-1943)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tango y copas (1942-1943)/12 Soy del noventa.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "b434ae7c335f45eab97354f977cabee97be22fabd01d458696",
+    "name": "Aquella Mujercita",
+    "album": "40 Grandes Exitos",
+    "artist": "Francisco Lomuto",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Francisco Lomuto/40 Grandes Éxitos/38 Aquella Mujercita.m4p",
+    "MasterArtist": "Francisco Lomuto"
+  },
+  {
+    "songId": "9ef1fe1fdded4575866678da10b59ef50e907ba6c994464e9c",
+    "name": "La Cumparsita",
+    "album": "Bailando Tango Con Juan D' Arienzo y Su Orquesta",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bailando Tango Con Juan D' Arienzo y Su Orquesta/08 La Cumparsita.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "b6760d540e7f43d7abe49636e3154183ab85f1dcc8f74b4f8f",
+    "name": "Te Aconsejo Que Me Dejes",
+    "album": "El Inmortal _Pichuco_",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/El Inmortal _Pichuco_/04 Te Aconsejo Que Me Dejes.m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "bf161f3339ec4cc6b6a349b4eb49ab08042700382b994e6fb0",
+    "name": "El Ingeniero",
+    "album": "Sin Palabras... Carlos Di Sarli (Todo Di Sarli en Music Hall 3)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Sin Palabras... Carlos Di Sarli (Todo Di Sarli en Music Hall 3)/22 El Ingeniero.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "de3a377b064241f3977d2c68e61b0c867412f881e4ca4c2a83",
+    "name": "El Irresistible",
+    "album": "RCA Victor 100 Anos_ Anibal Troilo",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/RCA Victor 100 Años_ Anibal Troilo/08 El Irresistible.m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "b764fcf83ac3494a8fb1e48b9d17135c905563ecfcab4d9d8a",
+    "name": "Ivon (Remasterizada)",
+    "album": "100 Tangos Inmortales (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/100 Tangos Inmortales (Remasterizado)/47 Ivón (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "60cd16b4d58041cbaa5ea0ce951bb1b971501cc814744aa7ae",
+    "name": "2-06 Tu Vida Es Mi Vida",
+    "album": "Grandes del Tango 51",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Grandes del Tango 51/2-06 Tu Vida Es Mi Vida.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "554ba8c2a9ff4698a2142967e2869eee17c384a604a74eff85",
+    "name": "Sombras Del Ayer",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/33 Sombras Del Ayer.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "90baface029a4b4e8baf8d9a1d90bfae350f3b3ff93e469b9b",
+    "name": "Tu Palida Voz",
+    "album": "Tango Classics 203_ Tu Palida Voz",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/Tango Classics 203_ Tu Palida Voz/01 Tu Palida Voz.m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "b814a74bc3394b73a5e0acf23f468a50ac3931d596c842898f",
+    "name": "Remembranza (feat. Jorge Maciel)",
+    "album": "Sera una Noche",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Será una Noche/03 Remembranza (feat. Jorge Maciel).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "678d547c0db74c9d99099dd928d7c296909379a0c11542d7a7",
+    "name": "Di Di",
+    "album": "Los Inmortales del Tango",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los Inmortales del Tango/12 Di Di.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "5f7ebec376a04c0bbc689913c36eeab236c0dfab98e24ff997",
+    "name": "Si Te Perdes, Chiflame (feat. Antonio Maida)",
+    "album": "Para Bailar (1932-1940)",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/Para Bailar (1932-1940)/08 Si Te Perdés, Chiflame (feat. Antonio Maida).m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "e0cbf51850a340b2b0820fea69617f53e910ae8f18fc48549c",
+    "name": "Igual Que una Sombra",
+    "album": "Malvon (Historical Recordings) [with Enrique Campos]",
+    "artist": "Ricardo Tanturi",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Ricardo Tanturi/Malvon (Historical Recordings) [with Enrique Campos]/12 Igual Que una Sombra.m4p",
+    "MasterArtist": "Ricardo Tanturi"
+  },
+  {
+    "songId": "01c5863eb6284c2cad8a72cbee3813e0dc618b60022b4fabba",
+    "name": "Pasional",
+    "album": "Como Nos Cambia La Vida",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Como Nos Cambia La Vida/12 Pasional.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "f46a99c44e0f4a1a9ed7aab9a808797abc28dbda6ff344dab9",
+    "name": "Malvon",
+    "album": "Malvon (Historical Recordings) [with Enrique Campos]",
+    "artist": "Ricardo Tanturi",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Ricardo Tanturi/Malvon (Historical Recordings) [with Enrique Campos]/01 Malvon.m4p",
+    "MasterArtist": "Ricardo Tanturi"
+  },
+  {
+    "songId": "4d1be4b7496048caa9f8177dc6b497ccebfb650d2c2242d7a0",
+    "name": "Senda de Amor (feat. Orquesta de Osvaldo Pugliese & Jorge Maciel)",
+    "album": "El Panuelito (feat. Orquesta de Osvaldo Pugliese)",
+    "artist": "Osvaldo Pugliese",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Osvaldo Pugliese/El Pañuelito (feat. Orquesta de Osvaldo Pugliese)/08 Senda de Amor (feat. Orquesta de Osvaldo Pugliese & Jorge Maciel).m4p",
+    "MasterArtist": "Osvaldo Pugliese"
+  },
+  {
+    "songId": "22da40aa994a46258031e5d35095f64815d63276536640ad86",
+    "name": "1-13 Pastora",
+    "album": "Grandes Del Tango 11",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Grandes Del Tango 11/1-13 Pastora.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "96181bd994be440385d1b3e65a21526b30ae91d7014344efb7",
+    "name": "Milongueando en el Cuarenta",
+    "album": "El Inmortal _Pichuco_",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/El Inmortal _Pichuco_/08 Milongueando en el Cuarenta.m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "bfe62e1c8ac24d4c89677142e5cb1dfed3e4adea4e994bb497",
+    "name": "B.B.",
+    "album": "The History of Tango_ The Immortal Pichuco, Vol. 1 - Recordings 1949-1958",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/The History of Tango_ The Immortal Pichuco, Vol. 1 - Recordings 1949-1958/15 B.B..m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "b42e50b93ab044948030b8ffcd95e93626d8176e8e1e4c54a3",
+    "name": "Ahora No Me Conoces (feat. Alberto Moran & Orquesta de Osvaldo Pugliese)",
+    "album": "Los 25 Mejores Tangos De (feat. Orquesta de Osvaldo Pugliese)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los 25 Mejores Tangos De (feat. Orquesta de Osvaldo Pugliese)/16 Ahora No Me Conocés (feat. Alberto Moran & Orquesta de Osvaldo Pugliese).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "b1017713fe524addbea1e2f1e97fdd78899020f313cb4dd1b6",
+    "name": "El horizonte",
+    "album": "Juan D'Arienzo 1937-1938",
+    "artist": "Juan D'Arienzo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Juan D'Arienzo/Juan D'Arienzo 1937-1938/09 El horizonte.m4p",
+    "MasterArtist": "Juan D'Arienzo"
+  },
+  {
+    "songId": "1f79dcfcc4c040208e0aceb44ebbc60cef52373edfd840718a",
+    "name": "Santa Milonguita (feat. Orquesta de Rodolfo Biagi & Hugo Duval)",
+    "album": "Sueno de Juventud",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Sueño de Juventud/15 Santa Milonguita (feat. Orquesta de Rodolfo Biagi & Hugo Duval).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "9495d4bfbf8648b1acf40b4ef3171d637422e2b0dd1c430b90",
+    "name": "Soy un Arlequin",
+    "album": "(1928-1929), Vol. 1",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/(1928-1929), Vol. 1/05 Soy un Arlequín.m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "0f48df19984b46ad8b089501f68be36951ef40f39db6451b89",
+    "name": "Recien",
+    "album": "Malvon (Historical Recordings) [with Enrique Campos]",
+    "artist": "Ricardo Tanturi",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Ricardo Tanturi/Malvon (Historical Recordings) [with Enrique Campos]/09 Recién.m4p",
+    "MasterArtist": "Ricardo Tanturi"
+  },
+  {
+    "songId": "286917b8532242b8a1ccee671598dd6d2917261f04df4a5db0",
+    "name": "El Dia Que Me Quieras (feat. Juan Alessio)",
+    "album": "1930-1936",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/1930-1936/17 El Día Que Me Quieras (feat. Juan Alessio).m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "875712a3ac6c4324b12842e9d46fe60cd75bc6ab20c44d9983",
+    "name": "Remolino (Remasterizada)",
+    "album": "100 Tangos Inmortales (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/100 Tangos Inmortales (Remasterizado)/80 Remolino (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "eeec549049e54e8692b7878d547407358cd8a62cc2be46729e",
+    "name": "Amor de Marinero (feat. Orquesta de Alfredo de Angelis & Roberto Florio)",
+    "album": "Alfredo de Angelis",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Alfredo de Angelis/09 Amor de Marinero (feat. Orquesta de Alfredo de Angelis & Roberto Florio).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "47559d5bad1a4ab1a42b0a662e75ebba8c534998afa24cd391",
+    "name": "El Entrerriano",
+    "album": "Tango Collection",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tango Collection/13 El Entrerriano.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "d35f01fd578e4d4f8af503595e87e09234cebae3cacb4137a5",
+    "name": "La Serenata de Ayer",
+    "album": "The History of Tango _ El Rey del Compas _ Recordings 1940 - 1942, Vol. 3",
+    "artist": "Juan D'Arienzo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Juan D'Arienzo/The History of Tango _ El Rey del Compas _ Recordings 1940 - 1942, Vol. 3/13 La Serenata de Ayer.m4p",
+    "MasterArtist": "Juan D'Arienzo"
+  },
+  {
+    "songId": "a1bd413862d341789f38cae113276f8636d8f6050f0844cc81",
+    "name": "Mama! Cuco",
+    "album": "Melenita negra (1927)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Melenita negra (1927)/29 Mamá! Cuco.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "de21ad410ed844b5b7cafe54dadb9324cd9c710a508446cea8",
+    "name": "Cuando Me Entres A Fallar",
+    "album": "Tangos Inolvidables",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tangos Inolvidables/03 Cuando Me Entres A Fallar.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "d0a3d0dd9eab410ba6bf0817008de11319210a32c4b84c5da2",
+    "name": "Lluvia De Colores",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/15 Lluvia De Colores.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "674542c2525643f6a293e1dcede3af325102857582c9442baf",
+    "name": "El internado",
+    "album": "Juan D'Arienzo 1937-1938",
+    "artist": "Juan D'Arienzo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Juan D'Arienzo/Juan D'Arienzo 1937-1938/17 El internado.m4p",
+    "MasterArtist": "Juan D'Arienzo"
+  },
+  {
+    "songId": "441a528c97624c8eabd05bb4f120682dd06edac3ccbd44c184",
+    "name": "Viento Sur",
+    "album": "Bailando Tango Con Juan D' Arienzo y Su Orquesta",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bailando Tango Con Juan D' Arienzo y Su Orquesta/10 Viento Sur.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "b57192b8b23f4a3c858bb24909d3c6689bab4893339d475a8b",
+    "name": "2-07 Parece Un Cuento",
+    "album": "Grandes Del Tango 11",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Grandes Del Tango 11/2-07 Parece Un Cuento.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "7c71a7fc97174572ba05d91eb15f93853808521a1a8f4332a0",
+    "name": "Mi Refugio",
+    "album": "Esenciales",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Esenciales/18 Mi Refugio.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "63266a8de7644176bd4b3e9ecc620892a8c9901a8ee6449e83",
+    "name": "Oiga",
+    "album": "Melenita negra (1927)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Melenita negra (1927)/04 Oiga.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "e7d902437a4a47e58446e5833c3eb724213edbeca8944e5ebc",
+    "name": "La Rayuela",
+    "album": "Sera una Noche",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Será una Noche/15 La Rayuela.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "2a0bf1175af94ad4939fb58d56482d6d7d886b741bf64e5f8d",
+    "name": "Lloran las Campanas",
+    "album": "Sombras del Puerto (feat. Alberto Podesta)",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/Sombras del Puerto (feat. Alberto Podestá)/08 Lloran las Campanas.m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "96fe0a3151cd454595f7bea51851982966f87846a5124f188e",
+    "name": "El Cuarteador",
+    "album": "El Inmortal _Pichuco_",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/El Inmortal _Pichuco_/14 El Cuarteador.m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "48de501cb03a4a04bb2a6b15add435521913d7106ceb46c6a2",
+    "name": "Que Solo Estoy",
+    "album": "Sombras del Puerto (feat. Alberto Podesta)",
+    "artist": "Carlos Di Sarli",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Carlos Di Sarli/Sombras del Puerto (feat. Alberto Podestá)/07 Que Solo Estoy.m4p",
+    "MasterArtist": "Carlos Di Sarli"
+  },
+  {
+    "songId": "0cca7e4c69b841e48ae068fb0d4bc109ec9650136f2a40c08f",
+    "name": "Saludos",
+    "album": "Los Inmortales del Tango",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los Inmortales del Tango/04 Saludos.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "06782b2056b54905af141984b1eb749d2858bbd59dae4675a5",
+    "name": "Enrico IV",
+    "album": "Piazzolla en Suite",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Piazzolla en Suite/07 Enrico IV.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "011ef077dddb4e4aa2bfba23cc65a63566cbe1cde6464fcfb8",
+    "name": "No Te Perdono Mas (Remasterizada)",
+    "album": "100 Tangos Inmortales (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/100 Tangos Inmortales (Remasterizado)/67 No Te Perdono Más (Remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "8305104977644c298e3bd1265ef40e26dc052ed826fd4cf685",
+    "name": "Juramento",
+    "album": "Buena Yunta",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/Buena Yunta/18 Juramento.m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "cdbdf11043fd44608b2648dd1aed6952225930b858324e5183",
+    "name": "Hacia La Cumbre",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/10 Hacia La Cumbre.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "2f39bae1cd06444ba7b5b9df5437984521b7a23a1d3c41318d",
+    "name": "Verano Porteno",
+    "album": "Esenciales",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Esenciales/14 Verano Porteño.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "5c007aa877284229bdffe870cb72cafbe2ad5c47c5044f0d97",
+    "name": "Pasion (remasterizada)",
+    "album": "Valses (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses (Remasterizado)/40 Pasión (remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "78dacf25f426443ebf95a7e3faa19cc988b6d364bf024dbaa4",
+    "name": "Palida Sombra",
+    "album": "Los Inmortales del Tango",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los Inmortales del Tango/24 Pálida Sombra.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "795f270f77ab4261a9f1854f611a4dc05c303d911ebb4329bf",
+    "name": "Inspiracion",
+    "album": "Los Inmortales del Tango",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Los Inmortales del Tango/03 Inspiración.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "a1a850eafcd441af9cdf309568f851b5b15703fac04e4431a9",
+    "name": "1-17 De Igual A Igual",
+    "album": "Grandes Del Tango 11",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Grandes Del Tango 11/1-17 De Igual A Igual.m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "841877cab76a4a13a3caec6c9c86d4e8bc2bac5ab8004d14a3",
+    "name": "El Poncho del Amor (feat. Miguel Montero)",
+    "album": "Osvaldo Pugliese (feat. Miguel Montero & Jorge Maciel)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Osvaldo Pugliese (feat. Miguel Montero & Jorge Maciel)/17 El Poncho del Amor (feat. Miguel Montero).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "242a8069b2bd40fea85f61b3ce641a5f04bf83bb0d5b43b5a8",
+    "name": "Cachirulo (Buenos Aires 4_3_1941 [Restauracion 2022])",
+    "album": "Anibal Troilo (Pichuco) Y Su Orquesta Tipica 1938 - 1941 [Restauracion 2022]",
+    "artist": "Anibal Troilo",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Aníbal Troilo/Aníbal Troilo (Pichuco) Y Su Orquesta Típica 1938 - 1941 [Restauración 2022]/06 Cachirulo (Buenos Aires 4_3_1941 [Restauración 2022]).m4p",
+    "MasterArtist": "Anibal Troilo"
+  },
+  {
+    "songId": "08d4a8d2661d47a1a8ac4d6fbca9780a613e961f7bce4cc7b2",
+    "name": "Mentiras Piadosas (feat. Julio Martel)",
+    "album": "Acordes Portenos",
+    "artist": "Alfredo de Angelis",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Alfredo de Angelis/Acordes Porteños/07 Mentiras Piadosas (feat. Julio Martel).m4p",
+    "MasterArtist": "Alfredo de Angelis"
+  },
+  {
+    "songId": "de0f1c760b934d64800962ea9e40787c6e29d615f1b54d8fbc",
+    "name": "Tu Olvido (remasterizada)",
+    "album": "Valses (Remasterizado)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Valses (Remasterizado)/49 Tu Olvido (remasterizada).m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "c2c12acb302e4017a84d3801de8372b71aa711249e4e49e682",
+    "name": "Amor Criollo",
+    "album": "Bellos Valses",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Bellos Valses/02 Amor Criollo.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "d080143f102c4de2a57e7e9cbbf374d05636989e834244fa95",
+    "name": "Chau, Chau",
+    "album": "Tango Classics 342_ Yerba Amarga (Historical Recordings)",
+    "artist": "Edgardo Donato",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Edgardo Donato/Tango Classics 342_ Yerba Amarga (Historical Recordings)/05 Chau, Chau.m4p",
+    "MasterArtist": "Edgardo Donato"
+  },
+  {
+    "songId": "d1f226c5d8354851919499f99bac50f0baaf29f40c06478c99",
+    "name": "Invierno Porteno",
+    "album": "Piazzolla en Suite",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Piazzolla en Suite/12 Invierno Porteño.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "5eb7d89f8e5f482eba15754c7069b57b23af46ba92f54310ac",
+    "name": "La Trampera",
+    "album": "Esenciales",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Esenciales/28 La Trampera.m4p",
+    "MasterArtist": "Unknown"
+  },
+  {
+    "songId": "41fbf780a9254bd880c57ffbbb5875c11802ef5ab06a4424a8",
+    "name": "Farolito de papel",
+    "album": "Tango y copas (1942-1943)",
+    "artist": "Compilations",
+    "fullPath": "/Users/tobybalsley/Music/TangoMusic/Pass 1/Compilations/Tango y copas (1942-1943)/23 Farolito de papel.m4p",
+    "MasterArtist": "Unknown"
+  }
+]

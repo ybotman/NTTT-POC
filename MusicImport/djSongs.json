@@ -1,0 +1,56 @@
+{
+  "songs": [
+    {
+      "SongID": "a934d855-4722-4863-9e7a-b0c1b3c4c28f",
+      "Title": "Unknown",
+      "Orchestra": "Unknown",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djSongs/a934d855-4722-4863-9e7a-b0c1b3c4c28f.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "",
+      "Alternative": "",
+      "Candombe": "",
+      "Cancion": "",
+      "Singer": ""
+    },
+    {
+      "SongID": "7a0fc00b-e1a8-4a0a-be4f-d8de8640d75a",
+      "Title": "Unknown",
+      "Orchestra": "Unknown",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djSongs/7a0fc00b-e1a8-4a0a-be4f-d8de8640d75a.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "",
+      "Alternative": "",
+      "Candombe": "",
+      "Cancion": "",
+      "Singer": ""
+    },
+    {
+      "SongID": "e406fbdc-d0fa-4ce0-8277-42872f3c042e",
+      "Title": "Unknown",
+      "Orchestra": "Unknown",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djSongs/e406fbdc-d0fa-4ce0-8277-42872f3c042e.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "",
+      "Alternative": "",
+      "Candombe": "",
+      "Cancion": "",
+      "Singer": ""
+    },
+    {
+      "SongID": "15ce88d8-12d2-4e98-bf8e-bb5a83a863ef",
+      "Title": "Unknown",
+      "Orchestra": "Unknown",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djSongs/15ce88d8-12d2-4e98-bf8e-bb5a83a863ef.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "",
+      "Alternative": "",
+      "Candombe": "",
+      "Cancion": "",
+      "Singer": ""
+    }
+  ]
+}

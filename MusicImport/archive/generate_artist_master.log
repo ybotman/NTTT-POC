@@ -1,0 +1,4 @@
+2024-12-13 12:45:03,765 [INFO] Loaded 15 records from 'AlbumArtists.json'.
+2024-12-13 12:45:03,765 [INFO] Consolidated 11 unique artists.
+2024-12-13 12:45:03,765 [INFO] Saved 11 records to 'ArtistMaster.json'.
+2024-12-13 12:45:03,765 [INFO] ArtistMaster.json created successfully.

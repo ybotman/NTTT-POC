@@ -1,0 +1,17 @@
+2024-12-14 14:44:27,736 [INFO] Matched file: 10 Pa' Que Seguir-S-R-V.mp3 (ID: 4706, Size Diff: 0)
+2024-12-14 14:44:27,863 [INFO] Matched file: 12 Me Llaman Tango-S-R-V.mp3 (ID: 4544, Size Diff: 0)
+2024-12-14 14:44:27,993 [INFO] Matched file: El Cachivache Quinteto - La noche que te fuiste.mp3 (ID: 13523, Size Diff: 0)
+2024-12-14 14:44:28,121 [INFO] Matched file: Soñemos.mp3 (ID: 25973, Size Diff: 0)
+2024-12-14 14:44:28,121 [INFO] Summary: Found 4 exact matches.
+2024-12-14 14:44:28,121 [INFO] Total matches (including duplicates): 9
+2024-12-14 14:44:28,121 [INFO] Files with multiple matches: 3
+2024-12-14 14:44:28,122 [INFO] Cleaned and recreated ./djSongsUpload folder.
+2024-12-14 14:44:28,124 [INFO] Copied 10 Pa' Que Seguir-S-R-V.mp3 to djSongsUpload/a934d855-4722-4863-9e7a-b0c1b3c4c28f.mp3
+2024-12-14 14:44:28,125 [INFO] Updated /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json with new song metadata.
+2024-12-14 14:44:28,130 [INFO] Copied 12 Me Llaman Tango-S-R-V.mp3 to djSongsUpload/7a0fc00b-e1a8-4a0a-be4f-d8de8640d75a.mp3
+2024-12-14 14:44:28,130 [INFO] Updated /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json with new song metadata.
+2024-12-14 14:44:28,134 [INFO] Copied El Cachivache Quinteto - La noche que te fuiste.mp3 to djSongsUpload/e406fbdc-d0fa-4ce0-8277-42872f3c042e.mp3
+2024-12-14 14:44:28,135 [INFO] Updated /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json with new song metadata.
+2024-12-14 14:44:28,140 [INFO] Copied Soñemos.mp3 to djSongsUpload/15ce88d8-12d2-4e98-bf8e-bb5a83a863ef.mp3
+2024-12-14 14:44:28,140 [INFO] Updated /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json with new song metadata.
+2024-12-14 14:44:28,140 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djMatchedSongs.json

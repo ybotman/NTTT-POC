@@ -1,0 +1,58 @@
+[
+  {
+    "filename": "10 Pa' Que Seguir-S-R-V.mp3",
+    "filenameCleanL1": "10 Pa Que SeguirSRV.mp3",
+    "attributes": {
+      "TIT2": "Pa' Que Seguir-S-R-V",
+      "TPE1": "Calo, Miguel",
+      "TALB": "Miguel Calo y su orquesta tipica - Sus exitos con Alberto Podesta, Jorge Ortiz y Raul Beron",
+      "TRCK": "10/20",
+      "TPOS": "0/0",
+      "TCON": "Tango",
+      "PRIV:Google/OriginalClientId:dlIX6fw0uqAC5H2Hbpy0dw": "PRIV(owner='Google/OriginalClientId', data=b'dlIX6fw0uqAC5H2Hbpy0dw')"
+    }
+  },
+  {
+    "filename": "12 Me Llaman Tango-S-R-V.mp3",
+    "filenameCleanL1": "12 Me Llaman TangoSRV.mp3",
+    "attributes": {
+      "TIT2": "Me Llaman Tango-S-R-V",
+      "TPE1": "D'Agostino, Angel",
+      "TPE2": "Angel d'Agostino",
+      "TALB": "Tangos De Los Angeles vol 4.",
+      "TRCK": "12/0",
+      "TPOS": "0/0",
+      "TCON": "Tango",
+      "PRIV:Google/OriginalClientId:qJ0cOlgB+mq4s/hDp8IXYw": "PRIV(owner='Google/OriginalClientId', data=b'qJ0cOlgB+mq4s/hDp8IXYw')",
+      "TDRC": "2002"
+    }
+  },
+  {
+    "filename": "El Cachivache Quinteto - La noche que te fuiste.mp3",
+    "filenameCleanL1": "El Cachivache Quinteto La noche que te fuiste.mp3",
+    "attributes": {
+      "TXXX:Software": "oftware",
+      "TXXX:major_brand": "ajor",
+      "TXXX:minor_version": "i",
+      "TXXX:compatible_brands": "ompatibl",
+      "TALB": "Daniela Bravo y Lucas Guevara - La noche que te fuiste - El Cachivache -Tango",
+      "TIT2": "La noche que te fuiste",
+      "TCON": "Tango - Modern",
+      "TPE1": "El Cachivache Quinteto",
+      "TDRC": "2020"
+    }
+  },
+  {
+    "filename": "Son\u0303emos.mp3",
+    "filenameCleanL1": "Sonemos.mp3",
+    "attributes": {
+      "TSSE": "Lavf61.1.100",
+      "TALB": "Noches con Di Sarli",
+      "TCON": "Tango",
+      "TRCK": "5",
+      "TIT2": "So\u00f1emos",
+      "TPE1": "Disarliana, Chino Laborde, Roberto Minondi",
+      "TDRC": "2024"
+    }
+  }
+]

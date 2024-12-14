@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "ReactScan",
+			"path": "../utils/ReactScan"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[javascript]": {
+			"editor.defaultFormatter": "dsznajder.es7-react-js-snippets"
+		},
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	}
+}

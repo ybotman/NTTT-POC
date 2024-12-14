@@ -1,0 +1,49 @@
+2024-12-13 12:12:33,713 [INFO] Starting processing of song data.
+2024-12-13 12:12:33,713 [ERROR] File not found: /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/song.json
+2024-12-13 12:12:33,714 [CRITICAL] Cannot proceed without valid 'song.json'. Exiting.
+2024-12-13 12:15:22,321 [INFO] Starting processing of song data.
+2024-12-13 12:15:22,321 [ERROR] File not found: /Users/tobybalsley/Music/RecordedWAVs/song.json
+2024-12-13 12:15:22,321 [CRITICAL] Cannot proceed without valid 'song.json'. Exiting.
+2024-12-13 12:15:38,046 [INFO] Starting processing of song data.
+2024-12-13 12:15:38,049 [INFO] Loaded 1445 records from 'songs.json'.
+2024-12-13 12:15:38,068 [INFO] Saved 1445 records to 'tango_songs.json'.
+2024-12-13 12:15:38,068 [INFO] Processed 1445 songs successfully.
+2024-12-13 12:15:38,068 [INFO] Extracted 15 unique artists.
+2024-12-13 12:15:38,068 [INFO] Saved 15 records to 'artists.json'.
+2024-12-13 12:15:38,068 [INFO] Saved artists data to 'artists.json'.
+2024-12-13 12:15:38,068 [INFO] Processing completed successfully.
+2024-12-13 12:34:09,452 [INFO] Starting processing of song data.
+2024-12-13 12:34:09,452 [ERROR] File not found: /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/songs.json
+2024-12-13 12:34:09,452 [CRITICAL] Cannot proceed without valid 'songs.json'. Exiting.
+2024-12-13 12:34:51,080 [INFO] Starting processing of song data.
+2024-12-13 12:34:51,082 [INFO] Loaded 1483 records from 'songs.json'.
+2024-12-13 12:34:51,102 [INFO] Saved 1483 records to 'tango_songs.json'.
+2024-12-13 12:34:51,102 [INFO] Processed 1483 songs successfully.
+2024-12-13 12:34:51,103 [INFO] Extracted 15 unique artists.
+2024-12-13 12:34:51,103 [INFO] Saved 15 records to 'artists.json'.
+2024-12-13 12:34:51,103 [INFO] Saved artists data to 'artists.json'.
+2024-12-13 12:34:51,103 [INFO] Processing completed successfully.
+2024-12-13 12:51:01,597 [INFO] Starting processing of song data.
+2024-12-13 12:51:01,599 [INFO] Loaded 1515 records from 'songs.json'.
+2024-12-13 12:51:01,619 [INFO] Saved 1515 records to 'tango_songs.json'.
+2024-12-13 12:51:01,619 [INFO] Processed 1515 songs successfully.
+2024-12-13 12:51:01,620 [INFO] Extracted 15 unique artists.
+2024-12-13 12:51:01,620 [INFO] Saved 15 records to 'artists.json'.
+2024-12-13 12:51:01,620 [INFO] Saved artists data to 'artists.json'.
+2024-12-13 12:51:01,620 [INFO] Processing completed successfully.
+2024-12-13 12:53:48,036 [INFO] Starting processing of song data.
+2024-12-13 12:53:48,038 [INFO] Loaded 1520 records from 'songs.json'.
+2024-12-13 12:53:48,059 [INFO] Saved 1520 records to 'tango_songs.json'.
+2024-12-13 12:53:48,059 [INFO] Processed 1520 songs successfully.
+2024-12-13 12:53:48,060 [INFO] Extracted 15 unique artists.
+2024-12-13 12:53:48,060 [INFO] Saved 15 records to 'RawArtists.json'.
+2024-12-13 12:53:48,060 [INFO] Saved artists data to 'RawArtists.json'.
+2024-12-13 12:53:48,060 [INFO] Processing completed successfully.
+2024-12-13 12:55:55,408 [INFO] Starting processing of song data.
+2024-12-13 12:55:55,411 [INFO] Loaded 1524 records from 'songs.json'.
+2024-12-13 12:55:55,432 [INFO] Saved 1524 records to 'tango_songs.json'.
+2024-12-13 12:55:55,432 [INFO] Processed 1524 songs successfully.
+2024-12-13 12:55:55,432 [INFO] Extracted 15 unique artists.
+2024-12-13 12:55:55,433 [INFO] Saved 15 records to 'ArtistsRaw.json'.
+2024-12-13 12:55:55,433 [INFO] Saved artists data to 'ArtistsRaw.json'.
+2024-12-13 12:55:55,433 [INFO] Processing completed successfully.
