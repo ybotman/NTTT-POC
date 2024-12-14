@@ -1,62 +1,14 @@
 [
   {
-    "djId": 4706,
-    "filename": "10 Pa' Que Seguir-S-R-V.mp3",
-    "filepath": "/Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongsRaw/10 Pa' Que Seguir-S-R-V.mp3",
-    "filesize": 4265285,
-    "closestMatch": {
-      "directory": "C:/Users/ttakeuch/Music/Mixxx/My Collection/Calo_ Miguel/Miguel Calo y su orquesta tipi",
-      "filename": "10 Pa' Que Seguir-S-R-V.mp3",
-      "filesize": 4265285,
-      "fs_deleted": 1,
-      "id": 4706,
-      "location": "C:/Users/ttakeuch/Music/Mixxx/My Collection/Calo_ Miguel/Miguel Calo y su orquesta tipi/10 Pa' Que Seguir-S-R-V.mp3",
-      "needs_verification": 0
-    }
+    "filename": "10 Pa' Que Seguir-S-R-V.mp3"
   },
   {
-    "djId": 4544,
-    "filename": "12 Me Llaman Tango-S-R-V.mp3",
-    "filepath": "/Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongsRaw/12 Me Llaman Tango-S-R-V.mp3",
-    "filesize": 5361109,
-    "closestMatch": {
-      "directory": "C:/Users/ttakeuch/Music/Mixxx/My Collection/Angel d'Agostino/Tangos De Los Angeles vol 4_",
-      "filename": "12 Me Llaman Tango-S-R-V.mp3",
-      "filesize": 5361109,
-      "fs_deleted": 1,
-      "id": 4544,
-      "location": "C:/Users/ttakeuch/Music/Mixxx/My Collection/Angel d'Agostino/Tangos De Los Angeles vol 4_/12 Me Llaman Tango-S-R-V.mp3",
-      "needs_verification": 0
-    }
+    "filename": "12 Me Llaman Tango-S-R-V.mp3"
   },
   {
-    "djId": 13523,
-    "filename": "El Cachivache Quinteto - La noche que te fuiste.mp3",
-    "filepath": "/Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongsRaw/El Cachivache Quinteto - La noche que te fuiste.mp3",
-    "filesize": 3510218,
-    "closestMatch": {
-      "directory": "C:/Users/ttakeuch/Music/Mixxx/Toshi",
-      "filename": "El Cachivache Quinteto - La noche que te fuiste.mp3",
-      "filesize": 3510218,
-      "fs_deleted": 1,
-      "id": 13523,
-      "location": "C:/Users/ttakeuch/Music/Mixxx/Toshi/El Cachivache Quinteto - La noche que te fuiste.mp3",
-      "needs_verification": 0
-    }
+    "filename": "El Cachivache Quinteto - La noche que te fuiste.mp3"
   },
   {
-    "djId": 25973,
-    "filename": "Soñemos.mp3",
-    "filepath": "/Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongsRaw/Soñemos.mp3",
-    "filesize": 6752959,
-    "closestMatch": {
-      "directory": "C:/Users/ttakeuch/OneDrive - MathWorks/Music/Mixxx/Toshi/Noches con Di Sarli",
-      "filename": "Soñemos.mp3",
-      "filesize": 6752959,
-      "fs_deleted": 0,
-      "id": 25973,
-      "location": "C:/Users/ttakeuch/OneDrive - MathWorks/Music/Mixxx/Toshi/Noches con Di Sarli/Soñemos.mp3",
-      "needs_verification": 0
-    }
+    "filename": "Soñemos.mp3"
   }
 ]

@@ -41,14 +41,16 @@
     "level": "1",
     "grouped": []
   },
-  {
-    "artist": "Osvaldo Pugliese",
+
+    {
+    "artist": "Juan DiArienzo",
     "active": "true",
     "level": "1",
     "grouped": []
   },
+
   {
-    "artist": "Osvalo Pugliese",
+    "artist": "Osvaldo Pugliese",
     "active": "true",
     "level": "1",
     "grouped": []
@@ -117,6 +119,48 @@
     "artist": "Lucio Demare",
     "active": "true",
     "level": "3",
+    "grouped": []
+  },
+    {
+    "artist": "Disarliana",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+    {
+    "artist": "Enrique Rodriguez",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Francisco Canaro",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },  
+{
+    "artist": "El Cachivache",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  }, 
+  {
+    "artist": "Julio De Caro",
+    "active": "true",
+    "level": "5",
+    "grouped": []
+  },
+    {
+    "artist": "Juan Maglio",
+    "active": "true",
+    "level": "5",
+    "grouped": []
+  },
+  {
+    "artist": "Miguel Calo",
+    "active": "true",
+    "level": "5",
     "grouped": []
   }
 ]

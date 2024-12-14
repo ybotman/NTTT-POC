@@ -1,27 +1,8 @@
-// Filename: app/page.jsx
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Box, Button, Typography, Stack } from "@mui/material";
-
-// JAX - Revised Code
-// Changes from previous attempt:
-// 1) Ensure audio starts at the specified start time after metadata is loaded.
-// 2) On wrong answer:
-//    - Subtract 10 points
-//    - Keep playing (do NOT stop the audio)
-//    - Time and scoring continue to decrease
-//    - User can guess again until correct answer is chosen or time runs out.
-// 3) If correct answer is chosen, stop the audio and show final score.
-// 4) If time runs out before correct guess, finalize quiz and show final score.
-// 5) Show the correct answer on screen (for testing) so you can verify wrong answers.
-// 6) Start with a random song and random snippet start each time.
-// 7) Added console logs for debugging. Check the browser console if something seems off.
-
-// NOTE: If user picks multiple wrong answers, each will deduct 10 points.
-// We do not prevent multiple attempts. Be careful: infinite attempts can lower score a lot.
-// For a real quiz, you might want to disable already chosen answers or limit attempts.
 
 export default function Page() {
   return <Quiz />;
@@ -29,7 +10,7 @@ export default function Page() {
 
 function Quiz() {
   const [songs, setSongs] = useState([]);
-  const [orchestras, setOrchestras] = useState([]);
+  const [artists, setArtists] = useState([]);
   const [currentSong, setCurrentSong] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -49,30 +30,32 @@ function Quiz() {
   useEffect(() => {
     // Fetch data on mount
     Promise.all([
-      fetch("/songData/songs.json").then((r) => r.json()),
-      fetch("/songData/orchestras.json").then((r) => r.json()),
-    ]).then(([songsData, orchData]) => {
-      setSongs(songsData.songs);
-      setOrchestras(orchData.orchestras);
+      fetch("/songData/djSongs.json").then((r) => r.json()),
+      fetch("/songData/ArtistMaster.json").then((r) => r.json()),
+    ]).then(([djSongsData, artistData]) => {
+      // djSongsData.songs is the array of songs
+      setSongs(djSongsData.songs);
+      // artistData is an array of artist objects with field "artist"
+      setArtists(artistData);
     });
   }, []);
 
   useEffect(() => {
-    if (songs.length > 0 && orchestras.length > 0) {
+    if (songs.length > 0 && artists.length > 0) {
       loadNewSong();
     }
-  }, [songs, orchestras]);
+  }, [songs, artists]);
 
   useEffect(() => {
-    if (currentSong) {
-      const correctOrch = currentSong.orchestra;
-      setCorrectAnswer(correctOrch);
-      const correctOrchObj = orchestras.find((o) => o.name === correctOrch);
-      const distractors = getDistractors(correctOrchObj, orchestras);
-      const finalAnswers = shuffleArray([correctOrch, ...distractors]);
+    if (currentSong && artists.length > 0) {
+      const correctArtist = currentSong.ArtistMaster;
+      setCorrectAnswer(correctArtist);
+
+      const distractors = getDistractors(correctArtist, artists);
+      const finalAnswers = shuffleArray([correctArtist, ...distractors]);
       setAnswers(finalAnswers);
     }
-  }, [currentSong, orchestras]);
+  }, [currentSong, artists]);
 
   useEffect(() => {
     if (isPlaying && !quizOver) {
@@ -124,17 +107,16 @@ function Quiz() {
     setAudioStartTime(startT);
 
     setCurrentSong(song);
-    console.log("Loading new song:", song.title, "start at:", startT);
+    console.log("Loading new song:", song.Title, "start at:", startT);
   };
 
   const handleMetadataLoaded = () => {
     setMetadataLoaded(true);
-    console.log("Metadata loaded for:", currentSong?.title);
+    console.log("Metadata loaded for:", currentSong?.Title);
   };
 
   const startAudio = () => {
     if (!currentSong || !audioRef.current) return;
-    // We'll set currentTime and play after metadata is loaded
     if (metadataLoaded) {
       audioRef.current.currentTime = audioStartTime;
       audioRef.current.play().then(() => {
@@ -142,7 +124,6 @@ function Quiz() {
         console.log("Playing from time:", audioRef.current.currentTime);
       });
     } else {
-      // If not loaded yet, wait for metadata
       const checkInterval = setInterval(() => {
         if (metadataLoaded && audioRef.current) {
           clearInterval(checkInterval);
@@ -184,8 +165,6 @@ function Quiz() {
       // Wrong answer: subtract 10 points and continue
       setScore((prev) => prev - 10);
       setSelectedAnswer(answer);
-      // Don't finalize, don't stop. User can try again.
-      // Just log and continue.
       console.log("Wrong answer chosen:", answer, "Score now:", score - 10);
     }
   };
@@ -213,7 +192,7 @@ function Quiz() {
         <>
           <audio
             ref={audioRef}
-            src={currentSong.audioUrl}
+            src={currentSong.AudioUrl}
             onLoadedMetadata={handleMetadataLoaded}
           />
           {!isPlaying && !quizOver && (
@@ -235,12 +214,12 @@ function Quiz() {
           </Typography>
 
           <Typography variant="body1" sx={{ mb: 2 }}>
-            Who is the orchestra?
+            Who is the Artist?
           </Typography>
 
-          {/* Display correct answer for testing */}
+          {/* Display correct answer for testing            (For Testing) Correct Answer: {correctAnswer} */}
           <Typography variant="body2" sx={{ mb: 2, fontStyle: "italic" }}>
-            (For Testing) Correct Answer: {correctAnswer}
+
           </Typography>
 
           <Stack spacing={2}>
@@ -297,24 +276,16 @@ function shuffleArray(array) {
   return arr;
 }
 
-function getDistractors(correctOrchObj, allOrchs) {
-  const correctName = correctOrchObj.name;
-  const correctAttrs = correctOrchObj.attributes;
+function getDistractors(correctArtist, allArtists) {
+  // correctArtist: string, the correct artist name
+  // allArtists: array of { artist: "Artist Name", active: "true", ... }
 
-  // Filter orch that share at least one attribute
-  let candidates = allOrchs.filter((o) => {
-    if (o.name === correctName) return false;
-    return o.attributes.some((attr) => correctAttrs.includes(attr));
-  });
+  // Filter out the correct artist
+  const candidates = allArtists
+    .filter((a) => a.artist.toLowerCase() !== correctArtist.toLowerCase())
+    .map((a) => a.artist);
 
-  // If not enough candidates, fallback to any except correct
-  if (candidates.length < 3) {
-    const fallback = allOrchs.filter((o) => o.name !== correctName);
-    const uniqueSet = new Set([...candidates, ...fallback]);
-    candidates = Array.from(uniqueSet);
-  }
-
+  // Shuffle and take 3
   const shuffled = shuffleArray(candidates);
-  const top3 = shuffled.slice(0, 3).map((o) => o.name);
-  return top3;
+  return shuffled.slice(0, 3);
 }

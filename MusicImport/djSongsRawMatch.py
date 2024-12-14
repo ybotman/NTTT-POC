@@ -4,7 +4,6 @@ import logging
 from pathlib import Path
 import unicodedata
 import shutil
-import uuid  # Import uuid to fix the error
 
 # Configure logging
 logging.basicConfig(
@@ -15,7 +14,6 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-
 
 def normalize_filename(name):
     """Normalize a filename by removing diacritics and converting to NFC form."""
@@ -36,12 +34,11 @@ def find_mp3_files(folder):
     """Find all MP3 files in a folder."""
     return [file for file in Path(folder).glob("*.mp3")]
 
-def match_mp3_to_track_locations(mp3_files, track_locations):
-    """Match MP3 files to track locations with normalization."""
+def match_mp3_to_track_locations(mp3_files, track_locations, djId_to_songID, unmatched_songs):
+    """Match MP3 files to track locations using djId_to_songID mapping.
+       If no songID is found for a given djId, that file is considered unmatched.
+    """
     matched_tracks = []
-    total_matches = 0
-    multiple_matches = 0
-
     for mp3 in mp3_files:
         mp3_name = mp3.name
         normalized_mp3_name = normalize_filename(mp3_name)
@@ -55,11 +52,9 @@ def match_mp3_to_track_locations(mp3_files, track_locations):
 
         if not matches:
             logging.info(f"File not found in track_locations: {mp3_name}")
+            # If it's not in track_locations, we don't know djId or songID. Consider it unmatched.
+            unmatched_songs.append({"filename": mp3_name})
             continue
-
-        total_matches += len(matches)
-        if len(matches) > 1:
-            multiple_matches += 1
 
         # Handle multiple matches by filesize
         closest_match = None
@@ -75,21 +70,19 @@ def match_mp3_to_track_locations(mp3_files, track_locations):
                 continue  # Skip invalid sizes
 
         if closest_match:
-            matched_track = {
-                "djId": closest_match['id'],
-                "filename": closest_match['filename'],
-                "filepath": str(mp3.resolve()),
-                "filesize": mp3_size,
-                "closestMatch": closest_match
-            }
-            matched_tracks.append(matched_track)
-            logging.info(f"Matched file: {mp3_name} (ID: {closest_match['id']}, Size Diff: {min_size_diff})")
-        else:
-            logging.info(f"Multiple matches found for {mp3_name}, but no size match.")
-
-    logging.info(f"Summary: Found {len(matched_tracks)} exact matches.")
-    logging.info(f"Total matches (including duplicates): {total_matches}")
-    logging.info(f"Files with multiple matches: {multiple_matches}")
+            dj_id_str = str(closest_match['id'])
+            if dj_id_str in djId_to_songID:
+                song_id = djId_to_songID[dj_id_str]
+                matched_tracks.append({
+                    "songID": song_id,
+                    "filename": closest_match['filename'],
+                    "filepath": str(mp3.resolve()),
+                    "filesize": mp3_size
+                })
+                logging.info(f"Matched file: {mp3_name} (djId: {closest_match['id']}, songID: {song_id}, Size Diff: {min_size_diff})")
+            else:
+                logging.warning(f"No songID found for djId: {closest_match['id']}")
+                unmatched_songs.append({"filename": mp3_name})
 
     return matched_tracks
 
@@ -109,60 +102,81 @@ def copy_and_rename_mp3(mp3, song_id, upload_folder):
     logging.info(f"Copied {mp3.name} to {new_file_path}")
     return new_file_path
 
-def update_dj_songs_json(output_file, song_metadata):
-    """Update djSongs.json incrementally with new metadata."""
-    if output_file.exists():
-        with output_file.open('r', encoding='utf-8') as f:
-            data = json.load(f)
-    else:
-        data = {"songs": []}
-
-    data["songs"].append(song_metadata)
-
-    with output_file.open('w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-    logging.info(f"Updated {output_file} with new song metadata.")
+def get_tango_song_metadata(song_id, tango_songs):
+    """Retrieve metadata from djTangoSongs.json based on songID."""
+    for song in tango_songs:
+        if song["songID"] == song_id:
+            return song
+    return None
 
 # Paths
 mp3_folder = Path("./djSongsRaw").resolve()
 track_locations_file = Path("./djTrack_locations.json").resolve()
-output_file = Path("./djMatchedSongs.json").resolve()
+tango_songs_file = Path("./djTangoSongs.json").resolve()
+matched_output_file = Path("./djMatchedSongs.json").resolve()
 songs_json_file = Path("./djSongs.json").resolve()
+unmatched_output_file = Path("./jsUnMatchedSongs.json").resolve()
 
 # Load data
 mp3_files = find_mp3_files(mp3_folder)
 track_locations = load_json(track_locations_file)
+tango_songs = load_json(tango_songs_file)
 
-# Match MP3 files to track locations
-matched_tracks = match_mp3_to_track_locations(mp3_files, track_locations)
+# Create a map from djId to songID
+djId_to_songID = {}
+for song in tango_songs:
+    dj_id_str = str(song["djId"])
+    djId_to_songID[dj_id_str] = song["songID"]
+
+unmatched_songs = []
+matched_tracks = match_mp3_to_track_locations(mp3_files, track_locations, djId_to_songID, unmatched_songs)
 
 # Prepare upload folder
 upload_folder = create_songs_upload_folder()
 
+# We'll store all matched song metadata in this list, then overwrite djSongs.json once
+all_songs_metadata = []
+
 # Process matched tracks
 for match in matched_tracks:
-    song_id = str(uuid.uuid4())  # Generate a unique song ID
+    song_id = match["songID"]
     mp3 = Path(match["filepath"])
-    new_file_path = copy_and_rename_mp3(mp3, song_id, upload_folder)
+
+    # Look up metadata from djTangoSongs.json by songID
+    tango_metadata = get_tango_song_metadata(song_id, tango_songs)
+    if not tango_metadata:
+        logging.warning(f"No metadata found for songID: {song_id}")
+        # If we can't find metadata, consider it unmatched
+        unmatched_songs.append({"filename": match["filename"]})
+        continue
+
+    # Copy and rename MP3
+    copy_and_rename_mp3(mp3, tango_metadata["songID"], upload_folder)
 
     # Prepare song metadata for djSongs.json
     song_metadata = {
-        "SongID": song_id,
-        "Title": match["closestMatch"].get("title", "Unknown"),
-        "Orchestra": match["closestMatch"].get("artist", "Unknown"),
-        "AudioUrl": f"https://namethattangotune.blob.core.windows.net/djSongs/{song_id}.mp3",
-        "Composer": match["closestMatch"].get("composer", ""),
-        "Year": match["closestMatch"].get("year", ""),
-        "Style": match["closestMatch"].get("Style1", ""),
-        "Alternative": match["closestMatch"].get("Alternative", ""),
-        "Candombe": match["closestMatch"].get("Candombe", ""),
-        "Cancion": match["closestMatch"].get("Cancion", ""),
+        "SongID": tango_metadata["songID"],
+        "Title": tango_metadata["songTitleCleanL1"],
+        "Orchestra": tango_metadata["artistCleanL2"],
+        "ArtistMaster": tango_metadata["artistMaster"],
+        "AudioUrl": f"https://namethattangotune.blob.core.windows.net/djsongs/{tango_metadata['songID']}.mp3",
+        "Composer": tango_metadata.get("composerCleanL1", ""),  
+        "Year": tango_metadata.get("year", ""),
+        "Style": tango_metadata["Style1"],
+        "Alternative": tango_metadata["Alternative"],
+        "Candombe": tango_metadata["Candombe"],
+        "Cancion": tango_metadata["Cancion"],
         "Singer": ""
     }
 
-    # Incrementally update djSongs.json
-    update_dj_songs_json(songs_json_file, song_metadata)
+    all_songs_metadata.append(song_metadata)
 
-# Save matched tracks for reference
-save_json(matched_tracks, output_file)
+# Overwrite djSongs.json with all matched metadata
+save_json({"songs": all_songs_metadata}, songs_json_file)
+
+# djMatchedSongs.json only needs the filename of matched songs
+matched_filenames = [{"filename": t["filename"]} for t in matched_tracks]
+save_json(matched_filenames, matched_output_file)
+
+# jsUnMatchedSongs.json only needs the filename for unmatched
+save_json(unmatched_songs, unmatched_output_file)
