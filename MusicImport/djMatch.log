@@ -1,12 +1,124 @@
-2024-12-14 17:20:40,508 [INFO] Matched file: 10 Pa' Que Seguir-S-R-V.mp3 (djId: 4706, songID: 2459716a-33e3-497e-b297-379d80530d5a, Size Diff: 0)
-2024-12-14 17:20:40,635 [INFO] Matched file: 12 Me Llaman Tango-S-R-V.mp3 (djId: 4544, songID: ca695495-6c3b-49f0-84ee-fba063004318, Size Diff: 0)
-2024-12-14 17:20:40,762 [INFO] Matched file: El Cachivache Quinteto - La noche que te fuiste.mp3 (djId: 13523, songID: 84c4272e-6994-4d2b-a3f7-4ccc0227815b, Size Diff: 0)
-2024-12-14 17:20:40,888 [INFO] Matched file: Soñemos.mp3 (djId: 25973, songID: a6459ebd-4c2e-4016-a154-27b783d481b0, Size Diff: 0)
-2024-12-14 17:20:40,889 [INFO] Cleaned and recreated ./djSongsUpload folder.
-2024-12-14 17:20:40,892 [INFO] Copied 10 Pa' Que Seguir-S-R-V.mp3 to djSongsUpload/2459716a-33e3-497e-b297-379d80530d5a.mp3
-2024-12-14 17:20:40,897 [INFO] Copied 12 Me Llaman Tango-S-R-V.mp3 to djSongsUpload/ca695495-6c3b-49f0-84ee-fba063004318.mp3
-2024-12-14 17:20:40,903 [INFO] Copied El Cachivache Quinteto - La noche que te fuiste.mp3 to djSongsUpload/84c4272e-6994-4d2b-a3f7-4ccc0227815b.mp3
-2024-12-14 17:20:40,910 [INFO] Copied Soñemos.mp3 to djSongsUpload/a6459ebd-4c2e-4016-a154-27b783d481b0.mp3
-2024-12-14 17:20:40,911 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json
-2024-12-14 17:20:40,911 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djMatchedSongs.json
-2024-12-14 17:20:40,911 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/jsUnMatchedSongs.json
+2024-12-15 10:26:30,813 [INFO] Processed 50 files. Matched: 16, Unmatched: 34
+2024-12-15 10:26:30,815 [INFO] Processed 100 files. Matched: 20, Unmatched: 80
+2024-12-15 10:26:30,816 [INFO] Processed 150 files. Matched: 23, Unmatched: 127
+2024-12-15 10:26:30,818 [INFO] Processed 200 files. Matched: 62, Unmatched: 138
+2024-12-15 10:26:30,819 [INFO] Processed 250 files. Matched: 105, Unmatched: 145
+2024-12-15 10:26:30,821 [INFO] Processed 300 files. Matched: 149, Unmatched: 151
+2024-12-15 10:26:30,822 [INFO] Processed 350 files. Matched: 194, Unmatched: 156
+2024-12-15 10:26:30,824 [INFO] Processed 400 files. Matched: 200, Unmatched: 200
+2024-12-15 10:26:30,826 [INFO] Processed 450 files. Matched: 200, Unmatched: 250
+2024-12-15 10:26:30,828 [INFO] Processed 500 files. Matched: 200, Unmatched: 300
+2024-12-15 10:26:30,830 [INFO] Processed 550 files. Matched: 200, Unmatched: 350
+2024-12-15 10:26:30,831 [INFO] Processed 600 files. Matched: 200, Unmatched: 400
+2024-12-15 10:26:30,833 [INFO] Processed 650 files. Matched: 200, Unmatched: 450
+2024-12-15 10:26:30,835 [INFO] Processed 700 files. Matched: 230, Unmatched: 470
+2024-12-15 10:26:30,837 [INFO] Processed 750 files. Matched: 233, Unmatched: 517
+2024-12-15 10:26:30,839 [INFO] Processed 800 files. Matched: 233, Unmatched: 567
+2024-12-15 10:26:30,841 [INFO] Processed 850 files. Matched: 233, Unmatched: 617
+2024-12-15 10:26:30,843 [INFO] Processed 900 files. Matched: 249, Unmatched: 651
+2024-12-15 10:26:30,845 [INFO] Processed 950 files. Matched: 267, Unmatched: 683
+2024-12-15 10:26:30,846 [INFO] Processed 1000 files. Matched: 317, Unmatched: 683
+2024-12-15 10:26:30,849 [INFO] Processed 1050 files. Matched: 367, Unmatched: 683
+2024-12-15 10:26:30,851 [INFO] Processed 1100 files. Matched: 417, Unmatched: 683
+2024-12-15 10:26:30,852 [INFO] Processed 1150 files. Matched: 467, Unmatched: 683
+2024-12-15 10:26:30,855 [INFO] Processed 1200 files. Matched: 477, Unmatched: 723
+2024-12-15 10:26:30,856 [INFO] Processed 1250 files. Matched: 518, Unmatched: 732
+2024-12-15 10:26:30,858 [INFO] Processed 1300 files. Matched: 567, Unmatched: 733
+2024-12-15 10:26:30,860 [INFO] Processed 1350 files. Matched: 614, Unmatched: 736
+2024-12-15 10:26:30,862 [INFO] Processed 1400 files. Matched: 661, Unmatched: 739
+2024-12-15 10:26:30,864 [INFO] Processed 1450 files. Matched: 709, Unmatched: 741
+2024-12-15 10:26:30,866 [INFO] Processed 1500 files. Matched: 754, Unmatched: 746
+2024-12-15 10:26:30,868 [INFO] Processed 1550 files. Matched: 804, Unmatched: 746
+2024-12-15 10:26:30,870 [INFO] Processed 1600 files. Matched: 854, Unmatched: 746
+2024-12-15 10:26:30,872 [INFO] Processed 1650 files. Matched: 889, Unmatched: 761
+2024-12-15 10:26:30,874 [INFO] Processed 1700 files. Matched: 935, Unmatched: 765
+2024-12-15 10:26:30,875 [INFO] Processed 1750 files. Matched: 975, Unmatched: 775
+2024-12-15 10:26:30,877 [INFO] Processed 1800 files. Matched: 1025, Unmatched: 775
+2024-12-15 10:26:30,879 [INFO] Processed 1850 files. Matched: 1056, Unmatched: 794
+2024-12-15 10:26:30,881 [INFO] Processed 1900 files. Matched: 1106, Unmatched: 794
+2024-12-15 10:26:30,883 [INFO] Processed 1950 files. Matched: 1156, Unmatched: 794
+2024-12-15 10:26:30,885 [INFO] Processed 2000 files. Matched: 1178, Unmatched: 822
+2024-12-15 10:26:30,887 [INFO] Processed 2050 files. Matched: 1206, Unmatched: 844
+2024-12-15 10:26:30,889 [INFO] Processed 2100 files. Matched: 1252, Unmatched: 848
+2024-12-15 10:26:30,891 [INFO] Processed 2150 files. Matched: 1302, Unmatched: 848
+2024-12-15 10:26:30,894 [INFO] Processed 2200 files. Matched: 1346, Unmatched: 854
+2024-12-15 10:26:30,896 [INFO] Processed 2250 files. Matched: 1396, Unmatched: 854
+2024-12-15 10:26:30,898 [INFO] Processed 2300 files. Matched: 1439, Unmatched: 861
+2024-12-15 10:26:30,900 [INFO] Processed 2350 files. Matched: 1486, Unmatched: 864
+2024-12-15 10:26:30,902 [INFO] Processed 2400 files. Matched: 1512, Unmatched: 888
+2024-12-15 10:26:30,905 [INFO] Processed 2450 files. Matched: 1559, Unmatched: 891
+2024-12-15 10:26:30,907 [INFO] Processed 2500 files. Matched: 1609, Unmatched: 891
+2024-12-15 10:26:30,909 [INFO] Processed 2550 files. Matched: 1657, Unmatched: 893
+2024-12-15 10:26:30,911 [INFO] Processed 2600 files. Matched: 1688, Unmatched: 912
+2024-12-15 10:26:30,914 [INFO] Processed 2650 files. Matched: 1694, Unmatched: 956
+2024-12-15 10:26:30,916 [INFO] Processed 2700 files. Matched: 1700, Unmatched: 1000
+2024-12-15 10:26:30,918 [INFO] Processed 2750 files. Matched: 1709, Unmatched: 1041
+2024-12-15 10:26:30,921 [INFO] Processed 2800 files. Matched: 1759, Unmatched: 1041
+2024-12-15 10:26:30,923 [INFO] Processed 2850 files. Matched: 1797, Unmatched: 1053
+2024-12-15 10:26:30,925 [INFO] Processed 2900 files. Matched: 1847, Unmatched: 1053
+2024-12-15 10:26:30,927 [INFO] Processed 2950 files. Matched: 1874, Unmatched: 1076
+2024-12-15 10:26:30,929 [INFO] Processed 3000 files. Matched: 1924, Unmatched: 1076
+2024-12-15 10:26:30,932 [INFO] Processed 3050 files. Matched: 1962, Unmatched: 1088
+2024-12-15 10:26:30,934 [INFO] Processed 3100 files. Matched: 2009, Unmatched: 1091
+2024-12-15 10:26:30,936 [INFO] Processed 3150 files. Matched: 2057, Unmatched: 1093
+2024-12-15 10:26:30,938 [INFO] Processed 3200 files. Matched: 2097, Unmatched: 1103
+2024-12-15 10:26:30,941 [INFO] Processed 3250 files. Matched: 2147, Unmatched: 1103
+2024-12-15 10:26:30,943 [INFO] Processed 3300 files. Matched: 2195, Unmatched: 1105
+2024-12-15 10:26:30,945 [INFO] Processed 3350 files. Matched: 2231, Unmatched: 1119
+2024-12-15 10:26:30,947 [INFO] Processed 3400 files. Matched: 2279, Unmatched: 1121
+2024-12-15 10:26:30,949 [INFO] Processed 3450 files. Matched: 2329, Unmatched: 1121
+2024-12-15 10:26:30,952 [INFO] Processed 3500 files. Matched: 2360, Unmatched: 1140
+2024-12-15 10:26:30,954 [INFO] Processed 3550 files. Matched: 2410, Unmatched: 1140
+2024-12-15 10:26:30,956 [INFO] Processed 3600 files. Matched: 2460, Unmatched: 1140
+2024-12-15 10:26:30,958 [INFO] Processed 3650 files. Matched: 2508, Unmatched: 1142
+2024-12-15 10:26:30,961 [INFO] Processed 3700 files. Matched: 2552, Unmatched: 1148
+2024-12-15 10:26:30,962 [INFO] Processed 3750 files. Matched: 2597, Unmatched: 1153
+2024-12-15 10:26:30,964 [INFO] Processed 3800 files. Matched: 2646, Unmatched: 1154
+2024-12-15 10:26:30,966 [INFO] Processed 3850 files. Matched: 2694, Unmatched: 1156
+2024-12-15 10:26:30,968 [INFO] Processed 3900 files. Matched: 2744, Unmatched: 1156
+2024-12-15 10:26:30,969 [INFO] Processed 3950 files. Matched: 2794, Unmatched: 1156
+2024-12-15 10:26:30,971 [INFO] Processed 4000 files. Matched: 2844, Unmatched: 1156
+2024-12-15 10:26:30,973 [INFO] Processed 4050 files. Matched: 2892, Unmatched: 1158
+2024-12-15 10:26:30,975 [INFO] Processed 4100 files. Matched: 2942, Unmatched: 1158
+2024-12-15 10:26:30,976 [INFO] Processed 4150 files. Matched: 2992, Unmatched: 1158
+2024-12-15 10:26:30,978 [INFO] Processed 4200 files. Matched: 3042, Unmatched: 1158
+2024-12-15 10:26:30,980 [INFO] Processed 4250 files. Matched: 3092, Unmatched: 1158
+2024-12-15 10:26:30,981 [INFO] Processed 4300 files. Matched: 3142, Unmatched: 1158
+2024-12-15 10:26:30,983 [INFO] Processed 4350 files. Matched: 3192, Unmatched: 1158
+2024-12-15 10:26:30,985 [INFO] Processed 4400 files. Matched: 3242, Unmatched: 1158
+2024-12-15 10:26:30,987 [INFO] Processed 4450 files. Matched: 3288, Unmatched: 1162
+2024-12-15 10:26:30,990 [INFO] Processed 4500 files. Matched: 3335, Unmatched: 1165
+2024-12-15 10:26:30,992 [INFO] Processed 4550 files. Matched: 3383, Unmatched: 1167
+2024-12-15 10:26:30,994 [INFO] Processed 4600 files. Matched: 3429, Unmatched: 1171
+2024-12-15 10:26:30,997 [INFO] Processed 4650 files. Matched: 3479, Unmatched: 1171
+2024-12-15 10:26:31,000 [INFO] Processed 4700 files. Matched: 3529, Unmatched: 1171
+2024-12-15 10:26:31,003 [INFO] Processed 4750 files. Matched: 3579, Unmatched: 1171
+2024-12-15 10:26:31,006 [INFO] Processed 4800 files. Matched: 3628, Unmatched: 1172
+2024-12-15 10:26:31,008 [INFO] Processed 4850 files. Matched: 3675, Unmatched: 1175
+2024-12-15 10:26:31,011 [INFO] Processed 4900 files. Matched: 3725, Unmatched: 1175
+2024-12-15 10:26:31,014 [INFO] Processed 4950 files. Matched: 3775, Unmatched: 1175
+2024-12-15 10:26:31,016 [INFO] Processed 5000 files. Matched: 3825, Unmatched: 1175
+2024-12-15 10:26:31,019 [INFO] Processed 5050 files. Matched: 3875, Unmatched: 1175
+2024-12-15 10:26:31,023 [INFO] Processed 5100 files. Matched: 3925, Unmatched: 1175
+2024-12-15 10:26:31,026 [INFO] Processed 5150 files. Matched: 3975, Unmatched: 1175
+2024-12-15 10:26:31,029 [INFO] Processed 5200 files. Matched: 4025, Unmatched: 1175
+2024-12-15 10:26:31,031 [INFO] Processed 5250 files. Matched: 4075, Unmatched: 1175
+2024-12-15 10:26:31,034 [INFO] Processed 5300 files. Matched: 4123, Unmatched: 1177
+2024-12-15 10:26:31,037 [INFO] Processed 5350 files. Matched: 4158, Unmatched: 1192
+2024-12-15 10:26:31,040 [INFO] Processed 5400 files. Matched: 4159, Unmatched: 1241
+2024-12-15 10:26:31,042 [INFO] Processed 5450 files. Matched: 4167, Unmatched: 1283
+2024-12-15 10:26:31,044 [INFO] Processed 5500 files. Matched: 4203, Unmatched: 1297
+2024-12-15 10:26:31,047 [INFO] Processed 5550 files. Matched: 4247, Unmatched: 1303
+2024-12-15 10:26:31,049 [INFO] Processed 5600 files. Matched: 4297, Unmatched: 1303
+2024-12-15 10:26:31,052 [INFO] Processed 5650 files. Matched: 4347, Unmatched: 1303
+2024-12-15 10:26:31,054 [INFO] Processed 5700 files. Matched: 4397, Unmatched: 1303
+2024-12-15 10:26:31,057 [INFO] Processed 5750 files. Matched: 4447, Unmatched: 1303
+2024-12-15 10:26:31,059 [INFO] Processed 5800 files. Matched: 4495, Unmatched: 1305
+2024-12-15 10:26:31,061 [INFO] Processed 5850 files. Matched: 4535, Unmatched: 1315
+2024-12-15 10:26:31,064 [INFO] Processed 5900 files. Matched: 4579, Unmatched: 1321
+2024-12-15 10:26:31,066 [INFO] Processed 5950 files. Matched: 4623, Unmatched: 1327
+2024-12-15 10:26:31,069 [INFO] Processed 6000 files. Matched: 4665, Unmatched: 1335
+2024-12-15 10:28:00,107 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djSongs.json
+2024-12-15 10:28:00,117 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djMatchedSongs.json
+2024-12-15 10:28:00,125 [INFO] Saved results to /Users/tobybalsley/MyDocs/AppDev/NameThatTangoTune/MusicImport/djUnMatchedSongs.json
+2024-12-15 10:28:00,125 [INFO] Processing complete.

@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Box, Button, Typography, Stack, Modal, TextField, Paper } from "@mui/material";
-import Image from "next/image";
 
 export default function Page() {
   return <Quiz />;
@@ -29,8 +28,8 @@ function Quiz() {
 
   // Configuration states
   const [showConfigModal, setShowConfigModal] = useState(true);
-  const [timeLimit, setTimeLimit] = useState(15);
-  const [numberOfSongs, setNumberOfSongs] = useState(3);
+  const [timeLimit, setTimeLimit] = useState(15); // default 15s
+  const [numberOfSongs, setNumberOfSongs] = useState(3); // default 3 songs
   const [songsPlayed, setSongsPlayed] = useState(0);
 
   const audioRef = useRef(null);
@@ -38,6 +37,7 @@ function Quiz() {
   const timerIntervalRef = useRef(null);
 
   useEffect(() => {
+    // Fetch data on mount
     Promise.all([
       fetch("/songData/djSongs.json").then((r) => r.json()),
       fetch("/songData/ArtistMaster.json").then((r) => r.json()),
@@ -55,10 +55,9 @@ function Quiz() {
 
   useEffect(() => {
     if (currentSong && artists.length > 0) {
-      const correctArtist =
-        currentSong.ArtistMaster && currentSong.ArtistMaster.trim() !== ""
-          ? currentSong.ArtistMaster
-          : "Unknown";
+      const correctArtist = currentSong.ArtistMaster && currentSong.ArtistMaster.trim() !== "" 
+        ? currentSong.ArtistMaster 
+        : "Unknown";
       setCorrectAnswer(correctArtist);
 
       const distractors = getDistractors(correctArtist, artists);
@@ -69,7 +68,9 @@ function Quiz() {
 
   useEffect(() => {
     if (isPlaying && !quizOver) {
-      const decrement = basePoints / (timeLimit * 10.0);
+      // Adjust scoring based on time limit
+      // Score goes from basePoints to 0 linearly over timeLimit seconds
+      const decrement = basePoints / (timeLimit * 10.0); // since interval is 0.1s
 
       scoreIntervalRef.current = setInterval(() => {
         setScore((prev) => Math.max(prev - decrement, 0));
@@ -104,14 +105,17 @@ function Quiz() {
   const calculateBasePoints = (tLimit) => {
     if (tLimit === 10) return 100;
     if (tLimit < 10) {
+      // e.g. 8s => 140 points
       return 100 + (10 - tLimit) * 20;
     } else {
+      // e.g. 15s => 50 points
       return 100 - (tLimit - 10) * 10;
     }
   };
 
   const loadNewSong = () => {
     if (songsPlayed >= numberOfSongs) {
+      // All songs played, end session
       setQuizOver(true);
       setFinalMessage("All songs played. Session complete!");
       return;
@@ -120,6 +124,7 @@ function Quiz() {
     const randomIndex = Math.floor(Math.random() * songs.length);
     const song = songs[randomIndex];
 
+    // Reset states for new round
     setTimeElapsed(0);
     setIsPlaying(false);
     setQuizOver(false);
@@ -197,7 +202,7 @@ function Quiz() {
   };
 
   const handleAnswerSelect = (answer) => {
-    if (quizOver) return;
+    if (quizOver) return; 
 
     const userAnswer = answer.trim().toLowerCase();
     const correct = correctAnswer.trim().toLowerCase();
@@ -206,7 +211,8 @@ function Quiz() {
       setFeedbackMessage("Correct!");
       finalizeQuiz();
     } else {
-      const penalty = basePoints * 0.05;
+      // Wrong answer: subtract 5% of basePoints
+      const penalty = basePoints * 0.05; 
       setScore((prev) => Math.max(prev - penalty, 0));
       setSelectedAnswer(answer);
       setFeedbackMessage(`Wrong answer! -${penalty.toFixed(0)} points`);
@@ -220,6 +226,7 @@ function Quiz() {
   };
 
   const timerColor = () => {
+    // Turn red if less than 2 seconds remain
     if (timeLimit - timeElapsed <= 2) return "red";
     return "inherit";
   };
@@ -229,21 +236,10 @@ function Quiz() {
   };
 
   return (
-    <Box sx={{ p: 0, maxWidth: 600, margin: "auto", textAlign: "center" }}>
-      {/* Header with image and beta note */}
-      <Box sx={{ position: "relative", width: "100%", mb: 2 }}>
-        <Image
-          src="/NTTTBanner.jpg"
-          alt="NTTT Banner"
-          width={600}
-          height={100}
-          style={{ width: "100%", height: "auto" }}
-        />
-        <Typography variant="subtitle1" sx={{ mt: 1 }}>
-          (*Beta, there will be bugs)
-        </Typography>
-      </Box>
-
+    <Box sx={{ p: 4, maxWidth: 600, margin: "auto", textAlign: "center" }}>
+      <Typography variant="h4" gutterBottom>
+        Name That Tango Tune - MVP
+      </Typography>
       <Typography variant="h6" gutterBottom>
         Session Score: {Math.round(sessionScore)}
       </Typography>
@@ -364,9 +360,7 @@ function Quiz() {
   );
 }
 
-Quiz.propTypes = {
-  // Add PropTypes if needed
-};
+Quiz.propTypes = {};
 
 function shuffleArray(array) {
   const arr = [...array];

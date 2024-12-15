@@ -1,0 +1,60 @@
+{
+  "songs": [
+    {
+      "SongID": "2459716a-33e3-497e-b297-379d80530d5a",
+      "Title": "Pa' Que Seguir-S-R-V",
+      "Orchestra": "Miguel Calo",
+      "ArtistMaster": "Miguel Calo",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djsongs/2459716a-33e3-497e-b297-379d80530d5a.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "Tango",
+      "Alternative": "N",
+      "Candombe": "N",
+      "Cancion": "N",
+      "Singer": ""
+    },
+    {
+      "SongID": "ca695495-6c3b-49f0-84ee-fba063004318",
+      "Title": "Me Llaman Tango-S-R-V",
+      "Orchestra": "Angel D'Agostino",
+      "ArtistMaster": "Angel D'Agostino",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djsongs/ca695495-6c3b-49f0-84ee-fba063004318.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "Tango",
+      "Alternative": "N",
+      "Candombe": "N",
+      "Cancion": "N",
+      "Singer": ""
+    },
+    {
+      "SongID": "84c4272e-6994-4d2b-a3f7-4ccc0227815b",
+      "Title": "La noche que te fuiste",
+      "Orchestra": "El Cachivache Quinteto",
+      "ArtistMaster": "El Cachivache",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djsongs/84c4272e-6994-4d2b-a3f7-4ccc0227815b.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "Tango",
+      "Alternative": "N",
+      "Candombe": "N",
+      "Cancion": "N",
+      "Singer": ""
+    },
+    {
+      "SongID": "a6459ebd-4c2e-4016-a154-27b783d481b0",
+      "Title": "Sonemos",
+      "Orchestra": "Disarliana, Chino Laborde, Roberto Minondi",
+      "ArtistMaster": "Disarliana",
+      "AudioUrl": "https://namethattangotune.blob.core.windows.net/djsongs/a6459ebd-4c2e-4016-a154-27b783d481b0.mp3",
+      "Composer": "",
+      "Year": "",
+      "Style": "Tango",
+      "Alternative": "N",
+      "Candombe": "N",
+      "Cancion": "N",
+      "Singer": ""
+    }
+  ]
+}
