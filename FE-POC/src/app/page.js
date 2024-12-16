@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Box, Button, Typography, Stack, Modal, TextField, Paper } from "@mui/material";
 import Image from "next/image";
@@ -37,35 +37,153 @@ function Quiz() {
   const scoreIntervalRef = useRef(null);
   const timerIntervalRef = useRef(null);
 
+  // Fetch and filter data
   useEffect(() => {
     Promise.all([
       fetch("/songData/djSongs.json").then((r) => r.json()),
       fetch("/songData/ArtistMaster.json").then((r) => r.json()),
     ]).then(([djSongsData, artistData]) => {
-      setSongs(djSongsData.songs);
-      setArtists(artistData);
+      // Filter artists to those that match the criteria
+      const validArtists = artistData.filter(
+        (a) => a.level === "1" && a.active === "true"
+      );
+
+      // Filter songs to have a non-blank ArtistMaster and that ArtistMaster is in valid artists
+      const validSongs = djSongsData.songs.filter((song) => {
+        const artistName = (song.ArtistMaster || "").trim().toLowerCase();
+        if (!artistName) return false;
+        // Check if artist is in validArtists
+        return validArtists.some((va) => va.artist.toLowerCase() === artistName);
+      });
+
+      setSongs(validSongs);
+      setArtists(validArtists);
     });
   }, []);
 
+  const calculateBasePoints = useCallback((tLimit) => {
+    if (tLimit === 10) return 100;
+    if (tLimit < 10) {
+      return 100 + (10 - tLimit) * 20;
+    }
+    return 100 - (tLimit - 10) * 10;
+  }, []);
+
+  const loadNewSong = useCallback(() => {
+    if (songs.length === 0) {
+      console.warn("No valid songs available.");
+      return;
+    }
+
+    if (songsPlayed >= numberOfSongs) {
+      // All songs played, finalize session
+      setQuizOver(true);
+      setFinalMessage("All songs played. Session complete!");
+      return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    const song = songs[randomIndex];
+
+    // Reset states for new song
+    setTimeElapsed(0);
+    setIsPlaying(false);
+    setQuizOver(false);
+    setSelectedAnswer(null);
+    setFeedbackMessage("");
+    setFinalMessage("");
+    setMetadataLoaded(false);
+
+    const startT = Math.floor(Math.random() * 90); // Random start time
+    setAudioStartTime(startT);
+
+    const newBasePoints = calculateBasePoints(timeLimit);
+    setBasePoints(newBasePoints);
+    setScore(newBasePoints);
+
+    setCurrentSong(song);
+    console.log("Loading new song:", song.Title, "start at:", startT);
+  }, [songs, numberOfSongs, songsPlayed, timeLimit, calculateBasePoints]);
+
   useEffect(() => {
+    // If configuration done, and we have songs and artists, load a new song
     if (songs.length > 0 && artists.length > 0 && !showConfigModal) {
       loadNewSong();
     }
-  }, [songs, artists, showConfigModal]);
+  }, [songs, artists, showConfigModal, loadNewSong]);
 
   useEffect(() => {
     if (currentSong && artists.length > 0) {
-      const correctArtist =
-        currentSong.ArtistMaster && currentSong.ArtistMaster.trim() !== ""
-          ? currentSong.ArtistMaster
-          : "Unknown";
-      setCorrectAnswer(correctArtist);
+      const candidateArtist = currentSong.ArtistMaster && currentSong.ArtistMaster.trim() !== ""
+        ? currentSong.ArtistMaster.trim()
+        : "Unknown";
 
-      const distractors = getDistractors(correctArtist, artists);
-      const finalAnswers = shuffleArray([correctArtist, ...distractors]);
+      setCorrectAnswer(candidateArtist);
+
+      const distractors = getDistractors(candidateArtist, artists);
+      const finalAnswers = shuffleArray([candidateArtist, ...distractors]);
       setAnswers(finalAnswers);
     }
   }, [currentSong, artists]);
+
+  const handleMetadataLoaded = useCallback(() => {
+    setMetadataLoaded(true);
+    if (audioRef.current) {
+      audioRef.current.currentTime = audioStartTime;
+    }
+    console.log("Metadata loaded for:", currentSong?.Title);
+  }, [audioStartTime, currentSong]);
+
+  const startAudio = useCallback(() => {
+    if (!currentSong || !audioRef.current) return;
+
+    const playFromStartTime = () => {
+      audioRef.current.currentTime = audioStartTime;
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+        console.log("Playing from time:", audioRef.current.currentTime);
+      });
+    };
+
+    if (metadataLoaded) {
+      playFromStartTime();
+    } else {
+      // Wait for metadata to load before setting the start time
+      const checkInterval = setInterval(() => {
+        if (metadataLoaded && audioRef.current) {
+          clearInterval(checkInterval);
+          playFromStartTime();
+        }
+      }, 100); // Check every 100ms
+    }
+  }, [currentSong, metadataLoaded, audioStartTime]);
+
+  const stopAudio = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    setIsPlaying(false);
+  }, []);
+
+  const finalizeQuiz = useCallback(() => {
+    setQuizOver(true);
+    stopAudio();
+    const finalPoints = Math.round(score);
+    setSessionScore((prev) => prev + finalPoints);
+    console.log("Quiz finalized. Score:", finalPoints);
+
+    let msg = "";
+    if (finalPoints > basePoints * 0.8) {
+      msg = "Excellent job!";
+    } else if (finalPoints > basePoints * 0.5) {
+      msg = "Great work!";
+    } else if (finalPoints > basePoints * 0.2) {
+      msg = "Not bad!";
+    } else {
+      msg = "Better luck next time.";
+    }
+    setFinalMessage(msg);
+  }, [basePoints, score, stopAudio]);
 
   useEffect(() => {
     if (isPlaying && !quizOver) {
@@ -88,9 +206,9 @@ function Quiz() {
       clearIntervals();
     }
     return () => clearIntervals();
-  }, [isPlaying, quizOver, basePoints, timeLimit]);
+  }, [isPlaying, quizOver, basePoints, timeLimit, finalizeQuiz]);
 
-  const clearIntervals = () => {
+  const clearIntervals = useCallback(() => {
     if (scoreIntervalRef.current) {
       clearInterval(scoreIntervalRef.current);
       scoreIntervalRef.current = null;
@@ -99,134 +217,42 @@ function Quiz() {
       clearInterval(timerIntervalRef.current);
       timerIntervalRef.current = null;
     }
-  };
+  }, []);
 
-  const calculateBasePoints = (tLimit) => {
-    if (tLimit === 10) return 100;
-    if (tLimit < 10) {
-      return 100 + (10 - tLimit) * 20;
-    } else {
-      return 100 - (tLimit - 10) * 10;
-    }
-  };
+  const handleAnswerSelect = useCallback(
+    (answer) => {
+      if (quizOver) return;
 
-  const loadNewSong = () => {
-    if (songsPlayed >= numberOfSongs) {
-      setQuizOver(true);
-      setFinalMessage("All songs played. Session complete!");
-      return;
-    }
+      const userAnswer = answer.trim().toLowerCase();
+      const correct = correctAnswer.trim().toLowerCase();
+      if (userAnswer === correct) {
+        setSelectedAnswer(answer);
+        setFeedbackMessage("Correct!");
+        finalizeQuiz();
+      } else {
+        const penalty = basePoints * 0.05;
+        setScore((prev) => Math.max(prev - penalty, 0));
+        setSelectedAnswer(answer);
+        setFeedbackMessage(`Wrong answer! -${penalty.toFixed(0)} points`);
+        console.log("Wrong answer chosen:", answer, "Score now:", score - penalty);
+      }
+    },
+    [quizOver, correctAnswer, finalizeQuiz, basePoints, score]
+  );
 
-    const randomIndex = Math.floor(Math.random() * songs.length);
-    const song = songs[randomIndex];
-
-    setTimeElapsed(0);
-    setIsPlaying(false);
-    setQuizOver(false);
-    setSelectedAnswer(null);
-    setFeedbackMessage("");
-    setFinalMessage("");
-    setMetadataLoaded(false);
-
-    const startT = Math.floor(Math.random() * 90);
-    setAudioStartTime(startT);
-
-    const newBasePoints = calculateBasePoints(timeLimit);
-    setBasePoints(newBasePoints);
-    setScore(newBasePoints);
-
-    setCurrentSong(song);
-    console.log("Loading new song:", song.Title, "start at:", startT);
-  };
-
-  const handleMetadataLoaded = () => {
-    setMetadataLoaded(true);
-    if (audioRef.current) {
-      audioRef.current.currentTime = audioStartTime;
-    }
-    console.log("Metadata loaded for:", currentSong?.Title);
-  };
-
-  const startAudio = () => {
-    if (!currentSong || !audioRef.current) return;
-    if (metadataLoaded) {
-      audioRef.current.currentTime = audioStartTime;
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-        console.log("Playing from time:", audioRef.current.currentTime);
-      });
-    } else {
-      const checkInterval = setInterval(() => {
-        if (metadataLoaded && audioRef.current) {
-          clearInterval(checkInterval);
-          audioRef.current.currentTime = audioStartTime;
-          audioRef.current.play().then(() => {
-            setIsPlaying(true);
-            console.log("Playing from time:", audioRef.current.currentTime);
-          });
-        }
-      }, 100);
-    }
-  };
-
-  const stopAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-    setIsPlaying(false);
-  };
-
-  const finalizeQuiz = () => {
-    setQuizOver(true);
-    stopAudio();
-    const finalPoints = Math.round(score);
-    setSessionScore((prev) => prev + finalPoints);
-    console.log("Quiz finalized. Score:", finalPoints);
-
-    let msg = "";
-    if (finalPoints > basePoints * 0.8) {
-      msg = "Excellent job!";
-    } else if (finalPoints > basePoints * 0.5) {
-      msg = "Great work!";
-    } else if (finalPoints > basePoints * 0.2) {
-      msg = "Not bad!";
-    } else {
-      msg = "Better luck next time.";
-    }
-    setFinalMessage(msg);
-  };
-
-  const handleAnswerSelect = (answer) => {
-    if (quizOver) return;
-
-    const userAnswer = answer.trim().toLowerCase();
-    const correct = correctAnswer.trim().toLowerCase();
-    if (userAnswer === correct) {
-      setSelectedAnswer(answer);
-      setFeedbackMessage("Correct!");
-      finalizeQuiz();
-    } else {
-      const penalty = basePoints * 0.05;
-      setScore((prev) => Math.max(prev - penalty, 0));
-      setSelectedAnswer(answer);
-      setFeedbackMessage(`Wrong answer! -${penalty.toFixed(0)} points`);
-      console.log("Wrong answer chosen:", answer, "Score now:", score - penalty);
-    }
-  };
-
-  const handleNextSong = () => {
+  const handleNextSong = useCallback(() => {
     setSongsPlayed((prev) => prev + 1);
     loadNewSong();
-  };
+  }, [loadNewSong]);
 
-  const timerColor = () => {
+  const timerColor = useCallback(() => {
     if (timeLimit - timeElapsed <= 2) return "red";
     return "inherit";
-  };
+  }, [timeElapsed, timeLimit]);
 
-  const handleStartConfig = () => {
+  const handleStartConfig = useCallback(() => {
     setShowConfigModal(false);
-  };
+  }, []);
 
   return (
     <Box sx={{ p: 0, maxWidth: 600, margin: "auto", textAlign: "center" }}>
@@ -257,7 +283,7 @@ function Quiz() {
             label="Time Limit (sec)"
             type="number"
             value={timeLimit}
-            onChange={(e) => setTimeLimit(parseInt(e.target.value) || 10)}
+            onChange={(e) => setTimeLimit(Number(e.target.value) || 10)}
             sx={{ mb: 2 }}
             fullWidth
           />
@@ -265,7 +291,7 @@ function Quiz() {
             label="Number of Songs"
             type="number"
             value={numberOfSongs}
-            onChange={(e) => setNumberOfSongs(parseInt(e.target.value) || 1)}
+            onChange={(e) => setNumberOfSongs(Number(e.target.value) || 1)}
             sx={{ mb: 2 }}
             fullWidth
           />
@@ -277,11 +303,13 @@ function Quiz() {
 
       {currentSong && !showConfigModal && (
         <>
-          <audio
-            ref={audioRef}
-            src={currentSong.AudioUrl}
-            onLoadedMetadata={handleMetadataLoaded}
-          />
+          {currentSong && (
+            <audio
+              ref={audioRef}
+              src={currentSong.AudioUrl}
+              onLoadedMetadata={handleMetadataLoaded}
+            />
+          )}
           {!isPlaying && !quizOver && (
             <Box sx={{ mb: 2 }}>
               <Button variant="contained" color="primary" onClick={startAudio}>
@@ -365,9 +393,10 @@ function Quiz() {
 }
 
 Quiz.propTypes = {
-  // Add PropTypes if needed
+  // If you want to add prop types (optional)
 };
 
+// Utility Functions
 function shuffleArray(array) {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
