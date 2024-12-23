@@ -4,6 +4,8 @@ import logging
 from pathlib import Path
 import unicodedata
 import shutil
+from mutagen.id3 import ID3, TIT2, TALB, TPE1, TCON, COMM, error
+from mutagen.mp3 import MP3
 
 # --------------------------------------
 # Configuration
@@ -31,6 +33,30 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+
+def update_mp3_metadata(mp3_file, song_metadata):
+    """Update MP3 metadata using Mutagen."""
+    try:
+        audio = MP3(mp3_file, ID3=ID3)
+
+        # If no ID3 tag exists, create one
+        try:
+            audio.add_tags()
+        except error:
+            pass
+
+        # Update metadata fields
+        audio.tags["TIT2"] = TIT2(encoding=3, text=song_metadata['Title'])  # Title
+        audio.tags["TALB"] = TALB(encoding=3, text=song_metadata['Album'])  # Album
+        audio.tags["TPE1"] = TPE1(encoding=3, text=song_metadata['ArtistMaster'])  # Artist
+        audio.tags["TCON"] = TCON(encoding=3, text=song_metadata['Style'])  # Genre/Style
+        audio.tags["COMM"] = COMM(encoding=3, lang="eng", desc="Comment", text=f"SongID: {song_metadata['SongID']}")  # SongID in comments
+
+        audio.save()
+        logging.info(f"Updated metadata for {mp3_file}")
+    except Exception as e:
+        logging.error(f"Failed to update metadata for {mp3_file}: {e}")
 
 
 def normalize_filename(name):
@@ -157,6 +183,16 @@ def get_tango_song_metadata(song_id, tango_songs):
     return None
 
 
+def copy_and_rename_mp3_flat(mp3, song_id, target_folder, song_metadata):
+    """Copy MP3 files to a flat folder in the target directory, renaming by song_id and updating metadata."""
+    new_file_path = target_folder / f"{song_id}.mp3"
+    shutil.copy(mp3, new_file_path)
+
+    # Update the metadata for the copied file
+    update_mp3_metadata(new_file_path, song_metadata)
+
+    return new_file_path
+
 # --------------------------------------
 # Main Process
 # --------------------------------------
@@ -171,7 +207,7 @@ if __name__ == "__main__":
 
     # Test mode: limit mp3_files to first 100 if test_mode is True
     if test_mode:
-        mp3_files = mp3_files[:1000]
+        mp3_files = mp3_files[:100]
 
     # Create a map from djId to songID
     djId_to_songID = {str(song["djId"]): song["songID"] for song in tango_songs}
@@ -180,6 +216,7 @@ if __name__ == "__main__":
     matched_tracks = match_mp3_to_track_locations(mp3_files, track_locations, djId_to_songID, unmatched_songs)
 
     # Process matched tracks
+   # Process matched tracks
     all_songs_metadata = []
     for match in matched_tracks:
         song_id = match["songID"]
@@ -191,14 +228,12 @@ if __name__ == "__main__":
             unmatched_songs.append({"filename": match["filename"], "fullpath": match["filepath"]})
             continue
 
-        # Copy and rename MP3 into a flat folder
-        copy_and_rename_mp3_flat(mp3, song_id, TARGET_FOLDER)
-
         # Prepare song metadata for djSongs.json
         song_metadata = {
             "SongID": tango_metadata["songID"],
             "Title": tango_metadata["songTitleCleanL1"],
             "Orchestra": tango_metadata["artistCleanL2"],
+            "Album": tango_metadata["albumTitleCleanL2"],
             "ArtistMaster": tango_metadata["artistMaster"],
             "AudioUrl": f"https://namethattangotune.blob.core.windows.net/djsongs/{tango_metadata['songID']}.mp3",
             "Composer": tango_metadata.get("composerCleanL1", ""),
@@ -209,6 +244,11 @@ if __name__ == "__main__":
             "Cancion": tango_metadata["Cancion"],
             "Singer": ""
         }
+
+        # Copy and rename MP3 into a flat folder and update metadata
+        copy_and_rename_mp3_flat(mp3, song_id, TARGET_FOLDER, song_metadata)
+
+        # Append song metadata
         all_songs_metadata.append(song_metadata)
 
     # Save outputs

@@ -13,7 +13,6 @@ def clean_special_characters(text):
         return ""
     cleaned_text = ''.join(c for c in unicodedata.normalize('NFD', text) 
                            if unicodedata.category(c) != 'Mn')
-    # Remove leading/trailing spaces and leading periods.
     return cleaned_text.strip().lstrip('.')
 
 def clean_commas(text):
@@ -31,6 +30,12 @@ def clean_commas(text):
         if len(parts) == 2 and len(parts[1].split()) <= 2:
             return f"{parts[1].strip()} {parts[0].strip()}"
     return text
+
+def fix_di_arienzo(text):
+    """Replace all occurrences of 'DiArienzo' (case-insensitive) with 'D'Arienzo'."""
+    if not text:
+        return ""
+    return re.sub(r"diarienzo", "D'Arienzo", text, flags=re.IGNORECASE)
 
 def remove_square_brackets(text):
     """Remove any content inside square brackets and the brackets themselves."""
@@ -87,6 +92,12 @@ def save_json(data, file_path):
         json.dump(data, f, ensure_ascii=False, indent=2)
     logging.info(f"Saved results to {file_path}")
 
+def generate_deterministic_song_id(album_title, song_title):
+    """Generate a deterministic UUID v5 based on album and song title."""
+    namespace = uuid.NAMESPACE_DNS  # Fixed namespace
+    input_string = f"{album_title}::{song_title}"
+    return str(uuid.uuid5(namespace, input_string))
+
 def process_library(library_path, artist_master_path, output_path, not_found_path):
     library = load_json(library_path)
     artist_master_list = load_json(artist_master_path)
@@ -95,32 +106,27 @@ def process_library(library_path, artist_master_path, output_path, not_found_pat
     results = []
     not_found_artists = set()
 
-    # Define valid genres
     valid_genres = ['tango', 'vals', 'waltz', 'milonga', 'marcha']
 
     for record in library:
         genre = record.get('genre', '')
-        # Skip songs that don't match criteria
         if not genre or not any(vg in genre.lower() for vg in valid_genres):
             continue
 
         dj_id = record.get('id', "")
         song_title_original = record.get('title', '')
         song_title_clean_l1 = clean_special_characters(song_title_original)
+        song_title_clean_l1 = fix_di_arienzo(song_title_clean_l1)  # Fix DiArienzo
 
         album_title_original = record.get('album', '')
         album_title_clean_l1 = clean_special_characters(album_title_original)
+        album_title_clean_l1 = fix_di_arienzo(album_title_clean_l1)  # Fix DiArienzo
         album_title_clean_l2 = remove_square_brackets(album_title_clean_l1)
 
-        artist_original = record.get('artist', '')
-        # Ensure artist_original is a string
-        if artist_original is None:
-            artist_original = ""
-
+        artist_original = record.get('artist', '') or ""
         artist_clean_l1 = clean_special_characters(artist_original)
         artist_clean_l2 = clean_commas(artist_clean_l1)
 
-        # Attempt to match artist to master
         matched_artist = ""
         lowered_clean_artist = artist_clean_l2.lower()
         if lowered_clean_artist in master_artists:
@@ -139,8 +145,10 @@ def process_library(library_path, artist_master_path, output_path, not_found_pat
         candombe = determine_candombe(genre)
         cancion = determine_cancion(genre)
 
+        song_id = generate_deterministic_song_id(album_title_original, song_title_original)
+
         results.append({
-            "songID": str(uuid.uuid4()),
+            "songID": song_id,
             "djId": dj_id,
             "songTitleOriginal": song_title_original,
             "songTitleCleanL1": song_title_clean_l1,
@@ -159,14 +167,13 @@ def process_library(library_path, artist_master_path, output_path, not_found_pat
 
     save_json(results, output_path)
 
-    # Filter out None or empty artists before sorting
     not_found_list = [artist for artist in not_found_artists if artist]
     not_found_data = [{"artist": artist} for artist in sorted(not_found_list)]
     save_json(not_found_data, not_found_path)
 
     logging.info(f"Processed {len(results)} songs matching the filter criteria.")
 
-# Example usage (adjust paths as needed)
+# Example usage
 library_path = Path("./djLibrary.json").resolve()
 artist_master_path = Path("./ArtistMaster.json").resolve()
 output_path = Path("./djTangoSongs.json").resolve()

@@ -45,7 +45,6 @@ def find_m4p_files(base_path):
 def extract_metadata(m4p_path, base_path):
     """
     Extract artist, album, and song metadata from the .m4p file path.
-    Automatically handles paths where artist folders are subdirectories of the input base path.
     """
     relative_path = m4p_path.relative_to(base_path)
     parts = relative_path.parts
@@ -64,16 +63,23 @@ def extract_metadata(m4p_path, base_path):
         logging.warning(f"Path structure not as expected: {m4p_path}")
         return {'artist': "Unknown", 'album': "Unknown", 'song': m4p_path.stem}
 
+def play_m4p_file(m4p_path):
+    """
+    Play the M4P file using afplay. Runs in background. 
+    Assumes system audio output is set to BlackHole.
+    """
+    try:
+        # Spawn afplay as a background process
+        # If DRM-protected, this may fail.
+        player_proc = subprocess.Popen(["afplay", str(m4p_path)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return player_proc
+    except Exception as e:
+        logging.error(f"Failed to play {m4p_path} with afplay: {e}")
+        return None
+
 def record_audio(output_wav_path, duration=None):
     """
     Record audio from BlackHole for the specified duration using ffmpeg.
-    
-    Parameters:
-        output_wav_path (Path): Path to save the recorded WAV file.
-        duration (int or None): Duration in seconds to record. If None, record full song.
-
-    Returns:
-        bool: True if recording was successful, False otherwise.
     """
     logging.info(f"Starting recording to {output_wav_path}")
     cmd = [
@@ -87,7 +93,8 @@ def record_audio(output_wav_path, duration=None):
     cmd.append(str(output_wav_path))
 
     try:
-        result = subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # ffmpeg will run until duration ends or stopped
+        subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         logging.info(f"Recording completed: {output_wav_path}")
         return True
     except subprocess.CalledProcessError as e:
@@ -176,8 +183,19 @@ def main():
             wav_filename = f"{song_id}.wav"
             wav_path = output_dir / wav_filename
 
+            # Start playing the M4P file
+            player_proc = play_m4p_file(m4p)
+            if player_proc is None:
+                logging.error(f"Could not start playback for {m4p}")
+                continue
+
             # Record the audio
             recorded = record_audio(wav_path, duration=record_duration)
+
+            # After recording is done, kill the player_proc if still running
+            if player_proc.poll() is None:
+                player_proc.kill()
+
             if not recorded or not validate_wav_file(wav_path):
                 logging.error(f"Failed to process or validate track: {m4p}")
                 continue
