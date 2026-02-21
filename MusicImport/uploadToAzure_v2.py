@@ -15,6 +15,7 @@ import json
 import os
 import subprocess
 import hashlib
+import base64
 import argparse
 from pathlib import Path
 from datetime import datetime
@@ -67,12 +68,13 @@ def log(message, verbose_only=False, verbose=False):
 
 
 def calculate_md5(file_path):
-    """Calculate MD5 hash of a file."""
+    """Calculate MD5 hash of a file (base64 encoded for Azure)."""
     hash_md5 = hashlib.md5()
     with open(file_path, "rb") as f:
         for chunk in iter(lambda: f.read(8192), b""):
             hash_md5.update(chunk)
-    return hash_md5.hexdigest()
+    # Azure requires base64-encoded MD5, not hex
+    return base64.b64encode(hash_md5.digest()).decode('utf-8')
 
 
 def check_az_cli():
@@ -100,7 +102,7 @@ def ensure_container_exists():
         "--name", CONTAINER_NAME,
         "--account-name", STORAGE_ACCOUNT,
         "--public-access", "blob",
-        "--auth-mode", "login"
+        "--auth-mode", "key"
     ], capture_output=True, text=True)
 
     if result.returncode == 0:
@@ -118,7 +120,7 @@ def blob_exists(blob_name):
         "--name", blob_name,
         "--container-name", CONTAINER_NAME,
         "--account-name", STORAGE_ACCOUNT,
-        "--auth-mode", "login",
+        "--auth-mode", "key",
         "--query", "exists",
         "-o", "tsv"
     ], capture_output=True, text=True, timeout=30)
@@ -149,7 +151,7 @@ def upload_blob(local_path, blob_name, content_md5=None, dry_run=False):
         "--name", blob_name,
         "--container-name", CONTAINER_NAME,
         "--account-name", STORAGE_ACCOUNT,
-        "--auth-mode", "login",
+        "--auth-mode", "key",
         "--content-type", "audio/mpeg",
         "--overwrite", "false"
     ]
@@ -175,16 +177,12 @@ def upload_blob(local_path, blob_name, content_md5=None, dry_run=False):
 
 
 def load_songs():
-    """Load songs that need to be uploaded."""
-    if os.path.exists(MATCHED_FILE):
-        with open(MATCHED_FILE, 'r', encoding='utf-8') as f:
-            matched = json.load(f)
-        return matched
-    elif os.path.exists(SONGS_FILE):
-        with open(SONGS_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        songs = data.get('songs', data)
-        return [{'songID': s['SongID'], 'sourceFile': None} for s in songs]
+    """Load songs from staging folder."""
+    source_folder = Path(SOURCE_FOLDER)
+    if source_folder.exists():
+        # Get all MP3 files in staging folder
+        files = list(source_folder.glob("*.mp3"))
+        return [{'songID': f.stem} for f in files]
     else:
         return []
 
@@ -262,12 +260,8 @@ def main():
             log(f"Not found: {blob_name}", verbose_only=True, verbose=args.verbose)
             continue
 
-        # Check if already in blob (skip if exists)
-        if args.skip_existing and not args.dry_run:
-            if blob_exists(blob_name):
-                stats['skipped'] += 1
-                log(f"Skipped (exists): {blob_name}", verbose_only=True, verbose=args.verbose)
-                continue
+        # Skip blob_exists check - let Azure handle duplicates (faster)
+        # --overwrite false in upload will just fail on duplicates
 
         # Calculate MD5
         md5_hash = calculate_md5(local_path) if not args.dry_run else "dry-run"

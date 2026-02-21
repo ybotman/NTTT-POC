@@ -45,6 +45,35 @@
 | [NTTT-19](https://hdtsllc.atlassian.net/browse/NTTT-19) | Add keyboard navigation for answers | accessibility, ux |
 | [NTTT-20](https://hdtsllc.atlassian.net/browse/NTTT-20) | Create backend API - Azure Functions or App Service | backend, azure |
 
+## Phase 5: DevOps & Infrastructure
+
+| Ticket | Summary | Labels |
+|--------|---------|--------|
+| NTTT-21 | Git branch strategy - localhost/DEV/TEST/PROD | devops, git |
+| NTTT-22 | DEV/TEST point to PROD Azure (no file updates) | devops, azure |
+| NTTT-23 | Architecture decision: Analytics storage (Firebase vs MongoDB) | architecture, decision |
+| NTTT-24 | Session metrics tracking (v2.0.0 MVP) | analytics, mvp |
+| NTTT-25 | User action logging - sharing, social, quiz answers | analytics, tracking |
+
+---
+
+## Architecture Decision: Analytics Storage (NTTT-23)
+
+**Options:**
+
+| Option | Pros | Cons |
+|--------|------|------|
+| **Firebase** | Already using Auth, real-time sync, free tier, easy setup | Vendor lock-in, query limits |
+| **MongoDB Atlas** | Flexible schema, powerful queries, good free tier | Additional service to manage |
+
+**Data to capture:**
+- Session metrics (start, end, duration, songs played)
+- Quiz answers (correct/wrong, response time)
+- User actions (sharing, social clicks)
+- Song difficulty analytics
+
+**Recommendation:** Start with **Firebase Firestore** for v2.0.0 since we already have Firebase Auth. Migrate to MongoDB later if query needs grow.
+
 ---
 
 ## Execution Order
@@ -53,8 +82,10 @@
 1. NTTT-10 ✅ extractMixxxSqlite.py (DONE)
 2. NTTT-11 Archive TOSHI to backup container
 3. NTTT-2 ✅ Filter with rating/timesplayed (DONE)
-4. NTTT-5 Upload to Azure (IN PROGRESS - permissions issue)
+4. NTTT-5 ✅ Upload to Azure (5,496 rated/played songs)
 5. NTTT-6 Document rollback procedure
+6. NTTT-21 Git branch setup (localhost/DEV/TEST/PROD)
+7. NTTT-22 Configure DEV/TEST → PROD Azure
 
 ### Week 2: App Fixes
 1. NTTT-18 Environment config

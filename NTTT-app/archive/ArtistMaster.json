@@ -1,0 +1,166 @@
+[
+  {
+    "artist": "Alfredo de Angelis",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Anibal Troilo",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Astor Piazzolla",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Carlos Di Sarli",
+    "active": "true",
+    "level": "1",
+    "grouped": []
+  },
+  {
+    "artist": "Edgardo Donato",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Francisco Lomuto",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Juan D'Arienzo",
+    "active": "true",
+    "level": "1",
+    "grouped": []
+  },
+
+    {
+    "artist": "Juan DiArienzo",
+    "active": "true",
+    "level": "1",
+    "grouped": []
+  },
+
+  {
+    "artist": "Osvaldo Pugliese",
+    "active": "true",
+    "level": "1",
+    "grouped": []
+  },
+  {
+    "artist": "Ricardo Tanturi",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Roberto Firpo",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Alfredo Gobbi",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Angel D'Agostino",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Bajofondo",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Color Tango",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Gotan Project",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Domingo Federico",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+  {
+    "artist": "Leopoldo Federico",
+    "active": "true",
+    "level": "4",
+    "grouped": []
+  },
+  {
+    "artist": "Ricardo Malerba",
+    "active": "true",
+    "level": "4",
+    "grouped": []
+  },
+  {
+    "artist": "Lucio Demare",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+    {
+    "artist": "Disarliana",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  },
+    {
+    "artist": "Enrique Rodriguez",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },
+  {
+    "artist": "Francisco Canaro",
+    "active": "true",
+    "level": "2",
+    "grouped": []
+  },  
+{
+    "artist": "El Cachivache",
+    "active": "true",
+    "level": "3",
+    "grouped": []
+  }, 
+  {
+    "artist": "Julio De Caro",
+    "active": "true",
+    "level": "5",
+    "grouped": []
+  },
+    {
+    "artist": "Juan Maglio",
+    "active": "true",
+    "level": "5",
+    "grouped": []
+  },
+  {
+    "artist": "Miguel Calo",
+    "active": "true",
+    "level": "5",
+    "grouped": []
+  }
+]

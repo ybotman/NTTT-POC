@@ -1,0 +1,108 @@
+{
+  "orchestras": [
+    {
+      "name": "Carlos Di Sarli",
+      "attributes": ["A", "B"]
+    },
+    {
+      "name": "Osvaldo Pugliese",
+      "attributes": ["A", "C", "D"]
+    },
+    {
+      "name": "Juan D'Arienzo",
+      "attributes": ["D"]
+    },
+    {
+      "name": "Aníbal Troilo",
+      "attributes": ["C", "D"]
+    },
+    {
+      "name": "Francisco Canaro",
+      "attributes": ["A", "D"]
+    },
+    {
+      "name": "Julio De Caro",
+      "attributes": ["B", "D"]
+    },
+    {
+      "name": "Rodolfo Biagi",
+      "attributes": ["A"]
+    },
+    {
+      "name": "Pedro Laurenz",
+      "attributes": ["B"]
+    },
+    {
+      "name": "Ricardo Tanturi",
+      "attributes": ["C"]
+    },
+    {
+      "name": "Lucio Demare",
+      "attributes": ["D"]
+    },
+    {
+      "name": "Enrique Rodriguez",
+      "attributes": ["A","D"]
+    },
+    {
+      "name": "Edgardo Donato",
+      "attributes": ["B","C"]
+    },
+    {
+      "name": "Armando Pontier",
+      "attributes": ["A","C"]
+    },
+    {
+      "name": "Alfredo De Angelis",
+      "attributes": ["A","D"]
+    },
+    {
+      "name": "Juan Carlos Cobián",
+      "attributes": ["C","D"]
+    },
+    {
+      "name": "Adolfo Carabelli",
+      "attributes": ["A","B","C"]
+    },
+    {
+      "name": "Angel D'Agostino",
+      "attributes": ["B","D"]
+    },
+    {
+      "name": "Orquesta Tipica Victor",
+      "attributes": ["C"]
+    },
+    {
+      "name": "Donato-Zerrillo",
+      "attributes": ["A"]
+    },
+    {
+      "name": "Felix Lipesker",
+      "attributes": ["D"]
+    },
+    {
+      "name": "Quinteto Pirincho",
+      "attributes": ["A","C","D"]
+    },
+    {
+      "name": "Francini-Pontier",
+      "attributes": ["A","B","D"]
+    },
+    {
+      "name": "Horacio Salgán",
+      "attributes": ["B","C","D"]
+    },
+    {
+      "name": "Héctor Varela",
+      "attributes": ["A","B","C","D"]
+    },
+    {
+      "name": "Sexteto Milonguero",
+      "attributes": ["C","D"]
+    },
+    {
+      "name": "Sexteto Mayor",
+      "attributes": ["B","C","D"]
+    }
+  ]
+}
